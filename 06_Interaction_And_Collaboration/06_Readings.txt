@@ -1,0 +1,12 @@
+Strobelt, Seq2Seq-Vis: A Visual Debugging Tool for Sequence-to-Sequence Models
+https://arxiv.org/abs/1804.09299
+
+Bau, GANPaint; 
+https://ganpaint-demo.vizhub.ai/
+
+Gehrmann, Visual Interaction with Deep Learning Models through Collaborative Semantic Inference;
+https://arxiv.org/abs/1907.10739
+
+https://github.com/SIDN-IAP/attnvis
+
+
