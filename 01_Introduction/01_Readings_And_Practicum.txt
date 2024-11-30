@@ -1,0 +1,16 @@
+Readings.
+
+Doshi-Velez, Kim, Towards A Rigorous Science of Interpretable Machine Learning
+https://arxiv.org/pdf/1702.08608
+
+Lipton, Mythos of Model Interpretability
+https://arxiv.org/pdf/1606.03490
+
+Ross, Right for the Right Reasons;
+https://arxiv.org/pdf/1703.03717
+
+Belinkov, Analysis methods in NLP
+https://arxiv.org/pdf/1812.08951
+
+Practicum
+https://github.com/SIDN-IAP/intro-lab
