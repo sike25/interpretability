@@ -1,0 +1,22 @@
+Generating adversarial examples with FGSM
+Goodfellow, Explaining and Harnessing Adversarial Examples; 
+https://arxiv.org/abs/1412.6572
+
+Simple gradient explanation with SmoothGrad;
+https://arxiv.org/abs/1706.03825 
+(already assigned in 02, read your notes on it)
+
+Optional: 
+Training robust models with robust optimization
+Madry, Towards Deep Learning Models Resistant to Adversarial Attacks; 
+https://arxiv.org/abs/1706.06083
+
+ML models rely on imperceptible features
+Ilyas, Adversarial Examples Are Not Bugs, They Are Features; 
+https://arxiv.org/abs/1905.02175
+
+Tsipras, Robustness May Be at Odds with Accuracy; 
+https://arxiv.org/abs/1805.12152
+
+Adversarial Robustness as a Prior for Learned Representations
+https://arxiv.org/abs/1906.00945
