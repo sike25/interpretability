@@ -1,0 +1,8 @@
+Hendricks, Generating Visual Explanations; 
+https://arxiv.org/pdf/1603.08507v1
+
+Hendricks, Grounding Visual Explanations; 
+https://arxiv.org/pdf/1807.09685
+
+Andreas, Neuralese: Analogs of Linguistic Structure in Deep Representations;
+https://arxiv.org/pdf/1707.08139
