@@ -1,0 +1,20 @@
+Smilkov, SmoothGrad: Removing Noise by Adding Noise;
+https://arxiv.org/pdf/1706.03825
+
+Petsiuk, RISE: Randomized Input Sampling for Explanation of Black-box Models; 
+https://arxiv.org/pdf/1806.07421
+
+Sturmfels, Visualizing the Impact of Feature Attribution Baselines; 
+https://distill.pub/2020/attribution-baselines/
+
+Ding, Saliency-driven Word Alignment Interpretation for Neural Machine Translation; 
+https://arxiv.org/abs/1906.10282
+
+Li, Visualizing and Understanding Neural Models in NLP; 
+https://aclanthology.org/N16-1082.pdf
+
+Mudrakarta, Did the Model Understand the Question?; 
+https://arxiv.org/pdf/1805.05492
+
+Arras, Explaining and Understanding LSTMs;
+https://arxiv.org/abs/1909.12114
