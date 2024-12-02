@@ -18,3 +18,7 @@ https://arxiv.org/pdf/1805.05492
 
 Arras, Explaining and Understanding LSTMs;
 https://arxiv.org/abs/1909.12114
+
+Lundberg, A Unified Approach to Interpreting Model Predictions (SHAP);
+
+Zhou: LIME: Learning Deep Features for Discriminative Localization
