@@ -29,7 +29,7 @@ Sometimes representations and decisions in models are hard to communicate with e
 How can we use richer explanations (especially in language) to describe more complex behaviors?
 
 ### Other Topics
-Shapley Additive Explanations, Kolmogorov-Arnold Networks and Neurosymbolic AI
+Kolmogorov-Arnold Networks and Neurosymbolic AI
 
 First seven topics are drawn from 
 [the 2020 MIT IBM practicum: Structure and Interpretation of Deep Networks](https://sidn.csail.mit.edu/) and [its accompanying Github](https://github.com/SIDN-IAP).
