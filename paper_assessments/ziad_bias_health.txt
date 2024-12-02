@@ -1,0 +1,21 @@
+Ziad, Dissecting racial bias in an algorithm used to manage the health of populations
+
+What main issue does the algorithm discussed in the paper exhibit?
+
+Explain how the algorithm's prediction of healthcare costs instead of direct health indicators contributes to racial bias, as detailed in the paper.
+
+What are the implications of the algorithm's racial bias for Black patients in terms of their healthcare management according to the study?
+
+Discuss the counterfactual approach used by the researchers to measure the impact of the algorithm’s bias. What does this approach entail and what were its findings?
+
+How did the authors use the available data to uncover and quantify racial disparities in the algorithm's predictions?
+
+What does the term 'calibration bias' mean in the context of this algorithm, and how does it relate to the observed racial disparities?
+
+Describe how socioeconomic factors might exacerbate the disparities caused by the algorithm, based on the paper’s findings.
+
+What potential solutions do the authors propose to mitigate the racial bias found in the healthcare management algorithm?
+
+How does the study differentiate between the costs predicted by the algorithm and the actual health needs of patients?
+
+What broader lessons about algorithmic bias and its societal implications can be drawn from this study?

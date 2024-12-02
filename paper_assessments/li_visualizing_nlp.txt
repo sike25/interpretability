@@ -1,0 +1,12 @@
+Li, Visualizing and Understanding Neural Models in NLP; 
+
+What is the primary challenge in NLP that the paper addresses regarding neural network models?
+Explain the concept of "compositionality" in neural models as discussed in the paper.
+Describe the strategies introduced in the paper for visualizing how neural units contribute to meaning composition in NLP models.
+What are some traditional and new methods used in the paper to measure the salience or importance of neural units?
+Discuss the comparison made in the paper between visualization techniques in NLP and those used in computer vision.
+How do the authors use the Stanford Sentiment Treebank in their experiments? What neural models do they employ for this dataset?
+What insights do the authors gain from plotting unit values and using t-SNE visualization techniques?
+Explain the concept of first-derivative saliency as used in the paper. How does it help in understanding neural models?
+What are some findings from the visualization of sequence-to-sequence models in the paper?
+Based on the paper, how might the visualization strategies developed impact future research and applications in neural models for NLP?

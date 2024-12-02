@@ -1,0 +1,21 @@
+Chouldechova, Fair prediction with disparate impact: A study of bias in recidivism prediction instruments; 
+
+What is the primary concern about using Recidivism Prediction Instruments (RPIs) within the criminal justice system, as discussed in the paper?
+
+Explain the notion of 'predictive bias' as it applies to recidivism prediction instruments. How does the paper differentiate between predictive bias and disparate impact?
+
+What fairness criterion from educational and psychological testing is discussed in the paper, and how is it applied to assess the fairness of RPIs like COMPAS and PCRA?
+
+Discuss how the paper addresses the controversy around the ProPublica study's findings on COMPAS. What key differences in analysis between the two are highlighted?
+
+How does the paper define 'test fairness' or 'well-calibrated' scores? Provide an explanation using the mathematical notation presented.
+
+The paper discusses the relationship between the positive predictive value (PPV), prevalence rates, and error rates in the context of test fairness. Explain how differences in recidivism prevalence can lead to different false positive and false negative rates across racial groups.
+
+What is the significance of the 'MinMax' policy discussed in the paper? How does it relate to the disparate impact observed in sentencing based on RPI assessments?
+
+Explain how the false positive and false negative rates contribute to disparate impacts under risk-based sentencing policies as described in the paper.
+
+The paper mentions a connection to measures of effect size, such as Cohen's d and the % non-overlap measure. Explain how these measures relate to the analysis of disparate impact in risk assessment tools.
+
+Summarize the paper's discussion on the implications of their findings for the use of data-driven risk assessment tools in the criminal justice system. What cautions or recommendations do the authors provide regarding the implementation of these tools?

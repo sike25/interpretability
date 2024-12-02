@@ -1,0 +1,21 @@
+Goodfellow, Explaining and Harnessing Adversarial Examples; 
+
+What is the definition of an adversarial example described in the paper, and why are such examples significant in studying machine learning models?
+
+Explain the authors' hypothesis regarding the primary cause of adversarial examples in neural networks. How does this explanation differ from earlier theories focusing on nonlinearity and overfitting?
+
+Discuss the method introduced by the authors for generating adversarial examples using the linear nature of models. How does this method improve the efficiency of generating such examples?
+
+Describe how adversarial training can be used as a regularization technique. What are the benefits and limitations of using adversarial training compared to traditional methods like dropout?
+
+What does the paper suggest about generalizing adversarial examples across different models and datasets? Why is this generalization significant?
+
+How does the paper argue that high-dimensional spaces contribute to the vulnerability of models to adversarial attacks?
+
+In the context of this paper, how do linear and non-linear models like RBF networks differ in their susceptibility to adversarial examples?
+
+What experimental results do the authors present to support their claims, and how do these results challenge previous assumptions about neural network robustness?
+
+According to the paper, why do adversarial examples often lead to incorrect but highly confident predictions by neural networks?
+
+Summarize the potential implications of the findings in this paper for future research and the development of more robust machine learning models.

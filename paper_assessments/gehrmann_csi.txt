@@ -1,0 +1,21 @@
+Gehrmann, Visual Interaction with Deep Learning Models through Collaborative Semantic Inference;
+
+What is the main purpose of the Collaborative Semantic Inference (CSI) framework introduced in the paper?
+
+Describe how the CSI framework incorporates visual interaction into the model reasoning process. What advantages does this integration offer?
+
+Explain the concept of 'hooks' as used in the CSI framework. How do these hooks facilitate interaction between the user and the model?
+
+Discuss how the CSI framework can help maintain human agency in automated decision-making processes. Why is this important?
+
+What are some of the challenges mentioned in the paper regarding the integration of machine learning models with interactive visual interfaces?
+
+Provide an example from the paper of how CSI has been applied to a practical use case, such as document summarization.
+
+How does the CSI framework propose to improve the understandability and interactivity of deep learning models compared to other approaches?
+
+Describe the role of latent variables in the CSI framework. How do these variables enhance the model's interpretability and user interaction?
+
+What implications does the CSI framework have for future research and development in visual analytics and machine learning?
+
+Based on the study, what are some potential disadvantages or limitations of the CSI framework that need to be addressed in future work?

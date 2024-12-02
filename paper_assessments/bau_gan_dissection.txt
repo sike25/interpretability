@@ -1,0 +1,21 @@
+Bau, GAN Dissection: Visualizing And Understanding Generative Adversarial Networks
+
+What is a GAN? Describe its architecture.
+
+Define and explain the importance of 'interpretable units' in the context of GANs used in this study.
+
+Describe the segmentation-based network dissection method used in the paper to identify interpretable units. What is its significance in understanding GANs?
+
+Explain the experimental method used to measure the causal effect of certain units within a GAN. How does this help understand and manipulate GAN outputs?
+
+The paper discusses inserting and ablating units to understand their function. Describe how these processes are conducted and what insights they provide about the GAN's internal representations.
+
+Discuss the contextual relationship between units and their background, as the paper explores. How do the authors study this relationship?
+
+The study provides several practical applications of their analytic framework. List and describe at least three of these applications.
+
+Compare and contrast the internal representations of GANs across different layers, models, and datasets as found in the experiments section of the paper.
+
+Explain the method and purpose of using human evaluation to validate the findings of GAN dissection. What were the key outcomes of this evaluation?
+
+Based on the paper's findings, discuss the implications of the dissection and intervention methods on future developments in GAN technology. What potential improvements or new features do these methods suggest for GANs?

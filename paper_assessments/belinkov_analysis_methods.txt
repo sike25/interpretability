@@ -1,0 +1,12 @@
+Belinkov and Glass, Analysis Methods (section 2); 
+
+What is the primary question in Section 2 regarding the information captured by neural networks in NLP?
+Explain the three dimensions considered when examining the linguistic information captured by neural networks as outlined in Section 2.
+Describe the common approach used for associating neural network components with linguistic properties, as discussed in this section.
+What are the findings of Shi et al. (2016) on the syntactic information captured by NMT models at different encoding layers?
+How is the correspondence between parts of the neural network and linguistic properties typically established according to the discussion in this section?
+Discuss the different linguistic phenomena analyzed in neural networks, as mentioned in this section.
+How do the studies referenced in Section 2 indicate the ability of neural networks to capture hierarchical representations of syntax?
+What are the implications of the findings on latent trees in natural language inference (NLI) models, as discussed in the paper?
+In what ways does the paper suggest that neural network components are studied, and how do these studies vary across different network types?
+What are the limitations of the classification approach to studying neural network representations, as highlighted in Section 2?

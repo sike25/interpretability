@@ -1,0 +1,12 @@
+Mudrakarta, Did the Model Understand the Question?
+
+What is the main problem the paper addresses regarding the understanding of question-answering models in NLP?
+Describe the method of 'Integrated Gradients' used in the paper and explain its significance in attributing word importance within questions.
+How does the paper differentiate between the use of 'Integrated Gradients' and other possible methods for analyzing neural models?
+In the Visual Question Answering section, what weakness does the model have in terms of word attribution, and how does this affect its performance?
+Discuss the experiment involving 'overstability tests' for Visual QA and what these tests reveal about the model’s dependency on specific words.
+What are 'prefix attacks', and how do they demonstrate the vulnerabilities in Visual Question Answering models?
+In the section on Question Answering over Tables, what does the paper reveal about the model's reliance on certain words, and how does this impact its accuracy?
+Explain the significance of 'table-specific default programs' mentioned in the paper and how they reflect on the model’s robustness.
+Discuss the paper's findings on Reading Comprehension and the specific types of adversarial attacks that are likely to succeed.
+What are the overall implications of the findings in this paper for future research and development in question-answering models?

@@ -1,0 +1,21 @@
+Bau, Network Dissection: Quantifying Interpretability of Deep Visual Representations
+
+What is the purpose of the Network Dissection framework as proposed in the paper, and how does it differ from traditional methods of evaluating neural network interpretability?
+
+Define a 'disentangled representation' as discussed in the introduction. Why is disentanglement significant for understanding deep neural networks?
+
+The paper utilizes a unique dataset called Broden for its analysis. Describe the composition of the Broden dataset and explain why it is suitable for the method proposed by the authors.
+
+Explain the process of scoring unit interpretability as implemented in Network Dissection. How is the alignment of hidden unit activations with human-interpretable concepts quantified?
+
+Discuss the impact of training iterations, dropout, and batch normalization on the interpretability of deep visual representations as found in the experiments section.
+
+Describe the experimental setup used to validate the Network Dissection method through human evaluation. What were the key findings from this evaluation?
+
+Hypothesis 1 and Hypothesis 2 are proposed to explain the emergence of interpretable units. Define these hypotheses and summarize how the paper's findings support one over the other.
+
+How does the paper quantify the interpretability of convolutional neural networks (CNNs), and what does it reveal about the relationship between discriminative power and interpretability?
+
+Compare the interpretability results of different network architectures such as AlexNet, GoogLeNet, VGG, and ResNet as presented in the paper. What trends do the authors observe?
+
+Based on the findings of the paper, how might one design a neural network to maximize both discriminative power and interpretability? Discuss any potential trade-offs or considerations.

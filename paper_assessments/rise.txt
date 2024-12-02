@@ -1,0 +1,30 @@
+Petsiuk, RISE: Randomized Input Sampling for Explanation of Black-box Models (2018) 
+https://arxiv.org/pdf/1806.07421
+
+What problem does the RISE (Randomized Input Sampling for Explanation) method address in the field of Explainable AI?
+
+
+How does RISE generate an importance map for explaining the decision of a black-box model?
+
+
+Compare and contrast the approach of RISE with white-box methods like GradCAM and LIME in terms of accessibility to the model’s internals.
+
+
+What datasets were used to evaluate the RISE method, and why were these particular datasets chosen?
+
+
+Explain the significance of the deletion and insertion metrics proposed in the paper for evaluating explanation methods. How do they differ from human-centric evaluation methods?
+
+
+How does the RISE method perform compared to other state-of-the-art methods in terms of the deletion and insertion metrics?
+
+
+Discuss the implications of using random masks in the context of the RISE method. What challenges are addressed by the specific mask generation technique described in the paper?
+
+
+How does RISE handle the generation and application of masks to produce saliency maps, according to the paper?
+The paper mentions the potential adversarial effects of pixel masking. What does this refer to, and how does RISE mitigate these effects?
+
+
+
+Based on the results presented in the paper, what are some limitations of the RISE method, and what future work do the authors suggest?

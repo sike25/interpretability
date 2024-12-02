@@ -1,0 +1,21 @@
+Strobelt, Seq2Seq-Vis: A Visual Debugging Tool for Sequence-to-Sequence Models
+
+What is the main purpose of Seq2Seq-Vis as described in the paper?
+
+Explain how Seq2Seq-Vis uses visualization to aid in debugging sequence-to-sequence models. What specific aspects of the model does it target?
+
+Describe the five stages of the translation process in seq2seq models as outlined in the paper and explain how Seq2Seq-Vis interacts with each stage.
+
+What are the main components of the visual interface of Seq2Seq-Vis and how do they contribute to model debugging?
+
+How does Seq2Seq-Vis facilitate the exploration of 'what if' scenarios in model debugging? Give an example mentioned in the paper.
+
+Discuss the use of attention mechanisms in seq2seq models and explain how Seq2Seq-Vis visualizes and manipulates these mechanisms for debugging purposes.
+
+What role do nearest neighbor searches play in Seq2Seq-Vis, and how does this feature aid in understanding model decisions?
+
+Explain how Seq2Seq-Vis can be used to examine and potentially correct errors in a seq2seq model's output.
+
+Describe a real-world application of Seq2Seq-Vis as presented in the paper. How does the tool address challenges in that application?
+
+What future enhancements or additional functionalities for Seq2Seq-Vis are suggested by the authors?

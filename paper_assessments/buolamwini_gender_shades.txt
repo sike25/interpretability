@@ -1,0 +1,21 @@
+Buolamwini, Gender Shades: Intersectional Accuracy Disparities in Commercial Gender Classification; 
+
+What is the primary concern addressed by the "Gender Shades" project regarding commercial gender classification systems?
+
+Please explain how the Fitzpatrick Skin Type classification system is used within the study and why it is significant for evaluating bias in facial analysis algorithms.
+
+What were the study's main findings regarding the performance of commercial gender classification systems across different gender and skin type groups?
+
+Discuss the concept of intersectionality as it is applied in this study. Why is it important to consider intersectional identities when evaluating algorithmic bias?
+
+How did the researchers construct their facial analysis dataset, and what were its key characteristics?
+
+What disparities did the study reveal about the accuracy of gender classification systems for darker-skinned females compared to other groups?
+
+Identify and explain one methodological approach the researchers used to ensure the fairness and thoroughness of their evaluation of commercial systems.
+
+What implications do the study's findings have for deploying AI in sensitive applications, such as law enforcement or healthcare?
+
+How does the study's use of the Fitzpatrick Skin Type system challenge or complement traditional racial categorizations in algorithmic auditing?
+
+According to the study, what changes are recommended to improve the fairness of AI systems that perform gender classification?
