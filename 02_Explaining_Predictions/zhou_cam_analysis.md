@@ -40,6 +40,8 @@ Visualization of the importance of input image portions for classifications, ach
 A CAM is a visual explanation of the relevance of input image portions for a classification. 
 To find the CAMs, they use a network without fully connected layers (which are bad for object detection emergent quality produced by conv layers). Below is a description of the CAM structure.
 
+![Zhou, Learning Deep Features for Discriminative Localization (2015)-4](https://github.com/user-attachments/assets/c6504176-a36c-4cc1-848a-15703a81608a)
+
 Intuitively, from this description, we can see how GAP would be better than GMP, as GAP captures its values from the feature map values for all the pixels, and GMP would pick just the most important pixel. It makes one wonder why Oquab et al ever decided on GMP in the first place. 
 
 ### Weakly Supervised Object Localization
