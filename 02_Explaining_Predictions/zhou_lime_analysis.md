@@ -24,8 +24,6 @@ Weaknesses: Does not address the relevance of locales.
 ### Class Activation Mapping
 
 
-
-
 What are the strengths?
 What are the weaknesses?
 What are some significant follow up work from this paper? How do they differ from this paper?
