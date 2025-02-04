@@ -21,4 +21,8 @@ https://arxiv.org/abs/1909.12114
 
 Lundberg, A Unified Approach to Interpreting Model Predictions (SHAP);
 
-Zhou: LIME: Learning Deep Features for Discriminative Localization
+Zhou, Learning Deep Features for Discriminative Localization (CAM)
+https://arxiv.org/abs/1512.04150
+
+Riberio, "Why Should I Trust You?": Explaining the Predictions of Any Classifier
+https://arxiv.org/abs/1602.04938
