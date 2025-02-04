@@ -1,4 +1,4 @@
-## Learning Deep Features for Discriminative Localization (LIME)
+## Learning Deep Features for Discriminative Localization (CAM)
 **Zhou et al, 2015**
 
 Visualization of the importance of input image portions for classifications, achieved by a network with only convolutional layers and topped with a global average pooling layer.
@@ -71,7 +71,9 @@ They perfrorm four kinds of evaluations:
 
 Even though CNNs are trained on specific tasks like classifying the ImageNet database, we have found that that their deeper layers learn universal patterns which are transferable to other talks. This is also true for the GAP-CNNs in this paper, with the added benefit that these higher levels also learn useful discrimination. 
 
-To get the final softmax weights, they collect the output of the GAP layer from GoogleNet-GAP, a vector of averaged feature maps, and feed it as inputs to an SVM. Then they test this against AlexNet's fc7 features across a handful of vision tasks and eight datasets. Fine-grained recognition features the classification of 200 bird species and their GoogleNet-GAP features performs comparably with existing approaches. It performs well on pattern discovery tasks whic include discovering informative objects in scenes, recognizing concepts (like, view out of window) in images, text detection in images, finding the answer to a visual question (where are the cows) within images where it performs with an accuracy of 55.89%. 
+To get the final softmax weights, they collect the output of the GAP layer from GoogleNet-GAP, a vector of averaged feature maps, and feed it as inputs to an SVM. Then they test this against AlexNet's fc7 features across a handful of vision tasks and eight datasets. Fine-grained recognition features the classification of 200 bird species and their GoogleNet-GAP features performs comparably with existing approaches. 
+
+It also performs well on pattern discovery tasks whic include discovering informative objects in scenes, recognizing concepts (like, view out of window) in images, text detection in images, finding the answer to a visual question (where are the cows) within images where it performs with an accuracy of 55.89%. 
 
 ### Visualizing Class-Specific Units
 
@@ -79,7 +81,7 @@ This paper goes on to visualize the class-specific units of a CNN using the ILSV
 
 ### Reflection
 
-**What is this paper about?**
+**What is this paper about?**       
 Visualization of the importance of input image portions for classifications, achieved by a network with only convolutional layers and topped with a global average pooling layer.
 
 **What are the strengths?**
@@ -88,10 +90,10 @@ Visualization of the importance of input image portions for classifications, ach
 3. Good visualizations, and tables    
 4. Breaking new ground   
 
-**What are the weaknesses?**
-The feed-forward layers on models have to be removed before this technique can be applied.
-Their description of CAM was difficult to follow. 
-Fully supervised methods still outperform their weakly supervised one.
+**What are the weaknesses?**      
+The feed-forward layers on models have to be removed before this technique can be applied.   
+Their description of CAM was difficult to follow.    
+Fully supervised methods still outperform their weakly supervised one.    
 
 **What are some significant follow up work from this paper? How do they differ from this paper?**
 
