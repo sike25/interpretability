@@ -91,9 +91,22 @@ Visualization of the importance of input image portions for classifications, ach
 4. Breaking new ground   
 
 **What are the weaknesses?**      
-The feed-forward layers on models have to be removed before this technique can be applied.   
-Their description of CAM was difficult to follow.    
-Fully supervised methods still outperform their weakly supervised one.    
+1. The feed-forward layers on models have to be removed before this technique can be applied.   
+2. Their description of CAM was difficult to follow.    
+3. Fully supervised methods still outperform their weakly supervised one.    
 
-**What are some significant follow up work from this paper? How do they differ from this paper?**
+**What are some significant follow up work from this paper? How do they differ from this paper?**    
+
+Grad-CAM: Why did you say that?, 2016    
+Introduces gradient-weighted CAMs for more transparency
+
+Eigen-CAM: Class Activation Map using Principal Components, 2020    
+Uses PCA to more simply and more intuitively calculate CAMs
+
+Relevance-cam: Your model already knows where to look, 2021   
+Works on using intermediate convolutional layers along with the final one
+
+
+
+
 
