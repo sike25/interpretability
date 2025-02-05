@@ -3,9 +3,9 @@
 
 ### Introduction
 
-Interpretability of deep neural networks matter for trust, debugging and insight. Saliency maps (sensitivity maps, pixel attribution) is a common way of explaining visual models. 
-They can be occlusion or gradient-based and they highlight the parts of input images that are important to prediction although the gradient-based ones are often visually noisy and also highlight parts of images that a person would not 
-expect to be relevant to prediction. Whether this phenomenon truly is noise or an expression of the actual working of the model is unclear.
+Interpretability of deep neural networks matter for trust, debugging and insight. 
+
+Saliency maps (sensitivity maps, pixel attribution) is a common way of explaining visual models. They can be occlusion or gradient-based and they highlight the parts of input images that are important to prediction although the gradient-based ones are often visually noisy and also highlight parts of images that a person would not expect to be relevant to prediction. Whether this phenomenon truly is noise or an expression of the actual working of the model is unclear.
 
 All that said, Smoothgrad is a method for clarifying gradient based saliency maps. 
 It works by adding small amounts of noises to the input image many times, computing the gradient map for each noisy input and finding their average to produce a final saliency map.
