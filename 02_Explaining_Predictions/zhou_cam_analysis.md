@@ -7,7 +7,7 @@ Visualization of the importance of input image portions for classifications, ach
 
 1. **Weakly Supervised Object Localization:**
 
-> This is object localization as an emergent quality of training CNNs to classify images.
+> This is an object detection task where the training image data has no bounding boxes.
 > 
 > a. Bergamo et al: Using masks to identify parts of images that maximize activation. (Sounds like RISE).
 >     
