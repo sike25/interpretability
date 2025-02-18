@@ -68,11 +68,37 @@ When answering questions like this, researchers often look into three dimensions
 
 ### Linguistic Phenomena
 
+The kinds of linguistic concepts researchers have investigated the question of whether models learned them include: 
+
+1. Basic Properties:
+   sentence length, word position, word prescence, word order.
+2. Morphological Properties:
+   suffixes, prefixes, root words.
+3. Synctatic Information:
+   subject-verb agreements, parts of speech.
+4. Semantic Information:
+   word meanings, context, implication.
+5. Speech Information
+   speaker identity, accents.
 
 ###  Neural network components
+
+The components of language models which are usually evaluated include:
 1. Word embeddings
-2. RNN state activations
-3. Attention weights
+2. Sentence embeddings
+3. RNN hidden state or gate activations
+4. Attention weights in sequence-to-sequence models
+5. Neural network layers
+   
+Some studies have compared the similarities bewreen convolutiinal filters and word embeddings in joint language-vision models.
+
+### Limitations
+
+That information is captured does not mean it was used in prediction, so it is not a perfect measure of explainability.
+
+Most of the methods look for correlation. But 
+
+The quality of the classifier is too important
 
 
 ---
