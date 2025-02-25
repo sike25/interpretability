@@ -1,7 +1,10 @@
 ## Network Dissection: Quantifying Interpretability of Deep Visual Representations
 **Bau et al, 2017**
 
-This paper quantifies the interpretive power of the latent representations of convolutional neural networks.
+This paper attempts to quantify and validate the interpretive power of the latent representations of convolutional neural networks.
+
+1. Paper: https://arxiv.org/pdf/1704.05796
+2. Code and data: https://netdissect.csail.mit.edu/
 
 ### 1. Introduction
 
