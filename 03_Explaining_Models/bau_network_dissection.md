@@ -10,6 +10,12 @@ This paper attempts to quantify and validate the interpretive power of the laten
 
 #### 1.1. Related Work
 
+Understanding CNN behavior can be achieved by:
+1. Visualizing image portions that maximize activations
+2. Using backpropagation variants to identify salient image features
+3. Isolating network pieces and assessing them on other tasks
+4. Etc.
+
 ### 2. Network Dissection
 
 #### 2.1. Broden: Broadly and Densely Labeled Dataset
