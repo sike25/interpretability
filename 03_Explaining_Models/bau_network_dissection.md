@@ -92,6 +92,8 @@ Additionally, the authors broke the rotation Q into smaller steps, going from a 
 
 Measuring the interpretability (using the number of unique detectors)  at each step shows that the loss of interpretability gradually happens as the rotation progresses.
 
+![image](https://github.com/user-attachments/assets/01fd195c-bb21-4467-9fb3-5850ac09202a)
+
 It is important to note that the discriminative power never changed through each partial rotation step. So the authors conclude: good performance neither creates nor requires interpretability.
 
 Interpretability is a different quality that must be measured separately to be understood.
@@ -108,15 +110,62 @@ Texture and color dominate the other concepts at the lower levels. At the higher
 
 #### 3.4. Network Architectures and Supervisions
 
+Here, the authors measure the impact of architecture and supervision on interpretability.
+
+**Architecture**   
+The authors used the last layers of each CNN where semantic detectors are usually more prominent. They found deeper, more complex architectures tend to have better interpretability, with the ranking ResNet > VGG > GoogLeNet > AlexNet. The depth ranking is exactly the same.
+
+**Dataset**      
+The Places dataset was more interpretable than ImageNet. The authors hypothesize that this is perhaps because scene detectors have layers which learn object detection and object detection is pretty interpretable.
+
+**Supervision**    
+The architecture is controlled (AlexNet). Self-taught supervision turns out to be much weaker at learning interpretable concepts than annotated supervision.
+But training on Places365 results in the largest interpretation. The colorozation task is trained on grayscale images and learns virtually zero color detectors but learns texture detectors. The authors  hypothesize that the interpretable concepts learned are those needed to succeed in the primary task.
+
 #### 3.5. Training Conditions vs. Interpretability
+
+The authors use the Places205-AlexNet as the baseline model to measure how training conditions affect interpretability. Then they make some variants using the same AlexNet architecture:
+
+1. Repeat1, Repeat2, Repeat3 - random initialization of weights. 
+The models acheive similar interpretability (in terms of unique detectors and total detectors).
+
+2. NoDropout - dropouts are removed from fully connected layers.
+More texture detectors imerge but fewer object detectors.
+
+3. BatchNorm - batch normalization is applied at each convolutional layer.
+Batch normalization significantly decreases interpretability. The authors hypothesize that batch normalization promotes random rotations. They also make the point that hyperparameterization should consider interpretability as well as discriminative power.
+
+Additionally, they look at interpretability across training iterations and note that it begins to appear after 10,000 interations. They also note that concept detectors never transition (i.e. texture detectors in one layer becoming object detectors as training goes on).
 
 #### 3.6  Discrimination vs. Interpretability
 
+The authors take CNN representations from higher layers and evaluate how well they transfer to a new task (action40 action recognition) by training linear SVMs on them and measuring the classification accuracy.
+
+The more interpretable layers (layers with more unique object detectors) performed better on the transfer task. The auhors hypothesize that performance on the secondary task does not just depend on the number of detectors but also on their relevance to the tranfer task.
+
 #### 3.7 Layer Width vs. Interpretability
+
+We have found that network depth improves interpretability (section 3.4), and it is also known that depth improves discriminative power. 
+
+Now, we look at the width (number of convolutional units at a layer). This is interesting, because it is widely understood while increasing width is very expensive, it has only marginal improvements on classification accuracy. Although, more recent research has started to show that wider networks can be made to rival deeper ones in performance.
+
+The authors removed the fully connected layers of AlexNet and tripled the number of units at conv5 (from 256 to 768 units) then they add a global average pooling layer after conv5 fo connect it to the final class prediction. They call it AlexNet-GAP-Wide.
+
+They trained AlexNet-GAP-Wide on Places365 and not only observed similar classification accuracy with classic AlexNet, but also got many more unique detectors and total detectors at conv5.
+
+Although, increasing the units at conv5 to 1024 then 2048 does not improve interepretability further, indicating a ceiling on AlexNet's capacity to disentagle concepts, or a limit on the number of disentangled concepts that are useful in solving the promary task of scene classification.
 
 ### 4. Conclusion
 
-selection bias is incomplete. by evaluating their network on units already deemed interpretable by humans, they failed to find whether the method 
+1. Network dissection is an automatic framework for quantifying the interpretability of a neural network.
+2. Interpretabiliy is not an axis-independent phenomenom.
+3. Training conditions and netowrk architecture affect interpretability.
+
+strengths:
+through
+visionary - talk about implications next to results. the idea of evaluation int as we do performabce is powerful idea.
+
+selection bias is incomplete. by evaluating their network on units already deemed interpretable by humans, they failed to find whether the method finds interpretation in neurons that rent interptetable
 
 Colors are over represented concepts in Broden with 59,250 samples of them. The next concepts are textures with 1,703 which is much less. scenes have just 38.
 
@@ -125,4 +174,8 @@ some explanations crazily difficult to understand (ex, intro explainability is a
 amt raters might click random buttons to get through the task and make that mula
 
 broden has limited concepts
+
+they did not tell us the depth of ech architecture while they arcgues depth = interpretab
+
+future work - capturing the benefits of batch normalization without losing interpretability
 
