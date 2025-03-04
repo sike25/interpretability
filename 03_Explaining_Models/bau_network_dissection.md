@@ -50,9 +50,9 @@ Each image's pixel is labelled with concepts it corresponds to, except for scene
 
 For every individual convolutional unit in the network, they run each of their 1_378 concepts from Broden and ask: does this unit align with this concept? This is a binary segmentation task (i.e. the answer is yes or no). This run is a forward pass. There is no need for training or back-propagation.
 
-# incomplete
+![Bau_Network_Dissection-Explanation-Part-1](https://github.com/user-attachments/assets/83db2099-1b25-415f-b469-290c9228562a)
 
-
+![Bau_Network_Dissection-Explanation-Part-2](https://github.com/user-attachments/assets/0520c68b-d8c8-4720-a23f-0866168ec3b2)
 
 ### 3. Experiments
 
@@ -176,17 +176,19 @@ The authors consistently talk about implications next to results. And the idea t
 
 **What are the weaknesses?**      
 
-1. Broden has a limited number of concepts. It is not as robust as human interpretation, and in fact, network dissection considerably underperforms human interpretation.
+1.The IOU threshold for deciding whether a unit is a detector (of 0.04) is laughingly low.
 
-2. Some explanations are creatively worded. Sections 2.2 and 3.1 took me several hours to understand.
+2. Broden has a limited number of concepts. It is not as robust as human interpretation, and in fact, network dissection considerably underperforms human interpretation.
 
-3. When they choose to evaluate ND on only units already deemed interpretable by humans, they missed the opportunity find whether the method finds meaningful interpretation in neurons that aren't interpretable. If it does, should that not count against the framework?
+3. Some explanations are creatively worded. Sections 2.2 and 3.1 took me several hours to understand.
 
-4. Colors are over represented concepts in Broden with 59,250 samples of them. The next concepts are textures with 1,703 samples which is much less. Scenes have just 38.
+4. When they choose to evaluate ND on only units already deemed interpretable by humans, they missed the opportunity find whether the method finds meaningful interpretation in neurons that aren't interpretable. If it does, should that not count against the framework?
 
-5. There is a good chance that human raters from Amazon Mechanical Turk click random buttons to finish the task quickly and collect their pay.
+5. Colors are over represented concepts in Broden with 59,250 samples of them. The next concepts are textures with 1,703 samples which is much less. Scenes have just 38.
 
-6. They argued that depth of networks improved interpretability then ranked the architectures by interpretability without mentioning their relative depths. Although, anybody can look it up, it would be more complete if they had also ranked the depth.
+6. There is a good chance that human raters from Amazon Mechanical Turk click random buttons to finish the task quickly and collect their pay.
+
+7. They argued that depth of networks improved interpretability then ranked the architectures by interpretability without mentioning their relative depths. Although, anybody can look it up, it would be more complete if they had also ranked the depth.
 
 
 **What are some significant follow up work from this paper? How do they differ from this paper?**    
