@@ -153,6 +153,9 @@ The authors removed the fully connected layers of AlexNet and tripled the number
 
 They trained AlexNet-GAP-Wide on Places365 and not only observed similar classification accuracy with classic AlexNet, but also got many more unique detectors and total detectors at conv5.
 
+![image](https://github.com/user-attachments/assets/693b196a-7d29-4b89-8ec8-e2eb88eeef5f)
+
+
 Although, increasing the units at conv5 to 1024 then 2048 does not improve interepretability further, indicating a ceiling on AlexNet's capacity to disentagle concepts, or a limit on the number of disentangled concepts that are useful in solving the promary task of scene classification.
 
 ### 4. Conclusion
@@ -160,6 +163,8 @@ Although, increasing the units at conv5 to 1024 then 2048 does not improve inter
 1. Network dissection is an automatic framework for quantifying the interpretability of a neural network.
 2. Interpretabiliy is not an axis-independent phenomenom.
 3. Training conditions and netowrk architecture affect interpretability.
+
+---
 
 ### Reflection      
 
