@@ -42,7 +42,7 @@ This paper collects visuals concepts from the **Broden** dataset (introduced bel
 
 ![image](https://github.com/user-attachments/assets/ce58d096-5604-4e3c-a131-e749fcc8e079)
 
-The authors newly assembled Broden for this work from several other diverse, densely-labeled image datasets (ADE, Open-Surfaces, Pascal-Context, Pacal-Part, the Describable Textures Dataset). 
+The authors newly assembled Broden for this work from several other diverse, densely-labeled image datasets (ADE, Open-Surfaces, Pascal-Context, Pascal-Part, the Describable Textures Dataset). 
 
 Each image's pixel is labelled with concepts it corresponds to, except for scenes and  textures where the labels are image-wide. The pixels are also labelled with 1 of 11 colors. Other concept labels were merged across datsets and only labels with at least 10 image samples were included.
 
@@ -50,18 +50,37 @@ Each image's pixel is labelled with concepts it corresponds to, except for scene
 
 For every individual convolutional unit in the network, they run each of their 1_378 concepts from Broden and ask: does this unit align with this concept? This is a binary segmentation task (i.e. the answer is yes or no). This run is a forward pass. There is no need for training or back-propagation.
 
-\A
+# incomplete
 
 
 
 ### 3. Experiments
 
-The CNN architectures they use include: **AlexNet, GoogLeNet, CGG** and **ResNet** which are trained on **ImageNet** (objects), **Places205** and **Places365** (places) datasets, for supervised tasks.
+The CNN architectures they use include: **AlexNet, GoogLeNet, CGG** and **ResNet** trained on **ImageNet** (objects), **Places205** and **Places365** (places) datasets, for supervised tasks.
 
 For self-supervised tasks, they use severals recent models trained on predicting context, solving puzzles, predicting ego-motion, learning bt moving, predicting video frame order, tracking, detecting object-centric alignement, colorizing images, predicting cross-channel and predicting ambient sound from frames.    
 All these models use the AlexNet architecture or a variant of it.
 
 #### 3.1. Human Evaluation of Interpretations
+
+The goal here is to show their method produces (see step 2 of network dissection) interpretations which are "correct".
+
+The authors established a form of ground truth by starting with convolutional units another study had decided were interpretable and had labelled with concepts. Then they selected a subset of these units human raters (from Amazon Mechanical Turk) consistently approved of the labels.
+
+This selection was important because evaluating their method's interpretation of units that are not interpretable at all would not be meaningful.
+
+Then, for each of these convolutional units, a second group of human raters from Amazon Mechanicak Turk were shown 15 images with patches highlighted by network dissection's step 2. These humans were then asked (yes/no) if a given phrase matched most of the patches in the images.
+
+The proportion of interpretations marked as descriptive by the humans were reported per layer the unit came from.
+
+------------------------------------------------------------------------
+                         conv1 |  conv2  |  conv3  |  conv4  |  conv5  |  
+------------------------------------------------------------------------
+Interpretable Units  |  57/196 | 126/256 | 247/384 | 258/384 | 195/256
+------------------------------------------------------------------------
+Human Consistency    |   82%   |   76%   |   83%   |   82%   |    91%     
+Network Dissection   |   38%   |   56%   |   54%   | 59%     |    71% 
+------------------------------------------------------------------------
 
 #### 3.2. Measurement of Axis-Aligned Interpretability
 
@@ -77,6 +96,13 @@ All these models use the AlexNet architecture or a variant of it.
 
 ### 4. Conclusion
 
+selection bias is incomplete. by evaluating their network on units already deemed interpretable by humans, they failed to find whether the method 
+
 Colors are over represented concepts in Broden with 59,250 samples of them. The next concepts are textures with 1,703 which is much less. scenes have just 38.
 
-bit repetitive. some explanations crazily difficult to understand (ex, intro explainability is axis-aligned). 
+some explanations crazily difficult to understand (ex, intro explainability is axis-aligned). the math of network dissection
+
+amt raters might click random buttons to get through the task and make that mula
+
+broden has limited concepts
+
