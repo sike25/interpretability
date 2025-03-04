@@ -63,28 +63,48 @@ All these models use the AlexNet architecture or a variant of it.
 
 #### 3.1. Human Evaluation of Interpretations
 
-The goal here is to show their method produces (see step 2 of network dissection) interpretations which are "correct".
+The goal here is to show their method produced interpretations which are "correct".
 
-The authors established a form of ground truth by starting with convolutional units another study had decided were interpretable and had labelled with concepts. Then they selected a subset of these units human raters (from Amazon Mechanical Turk) consistently approved of the labels.
+The authors established a form of ground truth by starting with convolutional units another study [40] had decided were interpretable and had labelled with concepts. This is important because not all units are interpretable, and we would only want to evaluate the method on the interpretable ones.
 
-This selection was important because evaluating their method's interpretation of units that are not interpretable at all would not be meaningful.
+A group of human raters from Amazon Mechanical Turk were asked to evaluate [40]'s interpretations. Another group was asked to evaluate the interpretations from network dissection. For each interpretable unit, the raters got 15 images (from AlexNet-Places205) with highlighted patches and had to decide (yes/no) whether most of them corresponded with a given phrase.
 
-Then, for each of these convolutional units, a second group of human raters from Amazon Mechanicak Turk were shown 15 images with patches highlighted by network dissection's step 2. These humans were then asked (yes/no) if a given phrase matched most of the patches in the images.
-
-The proportion of interpretations marked as descriptive by the humans were reported per layer the unit came from.
+The proportion of interpretations marked as descriptive by the human raters are reported per layer the unit came from in the following table.
 
 ------------------------------------------------------------------------
-                         conv1 |  conv2  |  conv3  |  conv4  |  conv5  |  
-------------------------------------------------------------------------
-Interpretable Units  |  57/196 | 126/256 | 247/384 | 258/384 | 195/256
-------------------------------------------------------------------------
-Human Consistency    |   82%   |   76%   |   83%   |   82%   |    91%     
-Network Dissection   |   38%   |   56%   |   54%   | 59%     |    71% 
-------------------------------------------------------------------------
+| | conv1 | conv2 | conv3 | conv4 | conv5 |
+|--------------------------|---------|---------|---------|---------|---------|
+| Interpretable Units | 57/96 | 126/256 | 247/384 | 258/384 | 195/256 |
+| Human Consistency | 82% | 76% | 83% | 82% | 91% |
+| Network Dissection | 38% | 56% | 54% | 59% | 71% |
+
+Network dissection underperforms human interpretation, but still performs decently and like human interpretation, even better at higher layers.
 
 #### 3.2. Measurement of Axis-Aligned Interpretability
 
+Is it reasonable to measure interpretability by looking at individual neurons? When we find a neuron that can detect "face", does that mean that neuron learned to detect faces, or it's just a coincidence? 
+
+The authors  randomly change the basis of a representation (i.e. rotate the representation) and effectively mix its activity with others. If the representation loses some interpretative potential, we know it is **not** just a coincidence because if it was, why does a random new basis no longer have coincidences?
+
+They use a random transformation (rotation) Q on the 256 units of AlexNet-Places205 conv5 and observe an 80% decrease in the number of unique detectors. This strongly indicates that networks genuinely learn the interpretations we query via dissection.
+
+Additionally, the authors broke the rotation Q into smaller steps, going from a = 0 (no rotation) to a = 1 (completed rotation) and values in between represent partial rotations.
+
+Measuring the interpretability (using the number of unique detectors)  at each step shows that the loss of interpretability gradually happens as the rotation progresses.
+
+It is important to note that the discriminative power never changed through each partial rotation step. So the authors conclude: good performance neither creates nor requires interpretability.
+
+Interpretability is a different quality that must be measured separately to be understood.
+
+
 #### 3.3. Disentangled Concepts by Layer
+
+The authors use network dissection to compare the interpretability of the convolutional layers of Places205-AlexNet and ImageNet-AlexNet. Interpretability is measured in number of unique detectots.
+
+Interpretability increases with deeper layers for high level concepts (objects, parts, scenes). It reduces for color.
+For material, it stays roughly constant, improving very slightly. For texture,  it improves, reduces at conv4 then picks back up for conv5.
+
+Texture and color dominate the other concepts at the lower levels. At the higher, objects and texture.
 
 #### 3.4. Network Architectures and Supervisions
 
