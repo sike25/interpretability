@@ -161,21 +161,34 @@ Although, increasing the units at conv5 to 1024 then 2048 does not improve inter
 2. Interpretabiliy is not an axis-independent phenomenom.
 3. Training conditions and netowrk architecture affect interpretability.
 
-strengths:
-through
-visionary - talk about implications next to results. the idea of evaluation int as we do performabce is powerful idea.
+### Reflection      
 
-selection bias is incomplete. by evaluating their network on units already deemed interpretable by humans, they failed to find whether the method finds interpretation in neurons that rent interptetable
+**What are the strengths?** 
 
-Colors are over represented concepts in Broden with 59,250 samples of them. The next concepts are textures with 1,703 which is much less. scenes have just 38.
+The work and outlook is thorough and visionary.
 
-some explanations crazily difficult to understand (ex, intro explainability is axis-aligned). the math of network dissection
+The authors consistently talk about implications next to results. And the idea that evaluating interpretability should be as standard as interpreting performance is a powerful, forward-looking idea.
 
-amt raters might click random buttons to get through the task and make that mula
+**What are the weaknesses?**      
 
-broden has limited concepts
+1. Broden has a limited number of concepts. It is not as robust as human interpretation, and in fact, network dissection considerably underperforms human interpretation.
 
-they did not tell us the depth of ech architecture while they arcgues depth = interpretab
+2. Some explanations are creatively worded. Sections 2.2 and 3.1 took me several hours to understand.
 
-future work - capturing the benefits of batch normalization without losing interpretability
+3. When they choose to evaluate ND on only units already deemed interpretable by humans, they missed the opportunity find whether the method finds meaningful interpretation in neurons that aren't interpretable. If it does, should that not count against the framework?
+
+4. Colors are over represented concepts in Broden with 59,250 samples of them. The next concepts are textures with 1,703 samples which is much less. Scenes have just 38.
+
+5. There is a good chance that human raters from Amazon Mechanical Turk click random buttons to finish the task quickly and collect their pay.
+
+6. They argued that depth of networks improved interpretability then ranked the architectures by interpretability without mentioning their relative depths. Although, anybody can look it up, it would be more complete if they had also ranked the depth.
+
+
+**What are some significant follow up work from this paper? How do they differ from this paper?**    
+
+The authors mentioned working on future research to capture the benefits of batch normalization without losing interpretability, but they never published anything of the sort. And nobody else did either.
+
+DISCOVER: Making Vision Networks Interpretable via Competition and Dissection (2023)      
+Introduces architectural changes that encourages neurons to activate sparsely (with ~ 4% of neurons activating for a given input) and consequently, specialize more claearly. This makes network dissection easier.
+
 
