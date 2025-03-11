@@ -2,7 +2,7 @@
 
 **Goodfellow et al, 2015**
 
-This paper argues that the linearity of neural networks is the main cause of their tendency to misclassify perturbed examples (i.e. vulnerability to adversarial examples) using quantitative results. It also presents a quick, easy way to generate adversarial examples.
+This paper argues that the linearity of neural networks gives them a tendency to misclassify linearly perturbed examples (i.e. makes them vulnerable to adversarial examples). It also draws on this hypothesis to present a quick, easy way to generate adversarial examples. It then shows that training on adversarial examples is a form of regularization.
 
 Paper: https://arxiv.org/pdf/1412.6572
 
@@ -27,7 +27,7 @@ Szegedy et al (2014b) was the most relevant. it found that:
 
 Let us start by explaining aversarial examples in linear classifiers, for example, the softmax regression models in Szegedy 2014.
 
-Real-life data representation has limited precision. For example, an image pixel is 8 bits so can only capture 256 (or 2^8) different values. So 100.2 and 100.4 both equate to 100. Any variation less than $$\frac{1}{255}$$ is discarded.
+Real-life data representation has limited precision. For example, an image pixel is 8 bits so can only capture 256 (or $$2^8$$) different values. So 100.2 and 100.4 both equate to 100. Any variation less than $$\frac{1}{255}$$ is discarded.
 
 It is then reasonable to expect that a model should not be ble to distinguish between an input $$x$$ and its adverserial input $$\overline{x} = x + n$$, when all the elements of the perturbation $$n$$ are less than $$e$$ where $$e < \frac{1}{255}$$ (small enough to be discarded).
 
@@ -35,7 +35,7 @@ Why is this not the case? Consider the dot product of an input and a weight vect
 
 $$w^T \cdot \overline{x} = w^T \cdot x + w^T \cdot n$$
 
-To maximize the effect the pertubation $$w^T \cdot n$$ as on the activation $$w^T \cdot \overline{x}$$ while keeping each element in $$n$$ small, we can set $$n = sign(w)$$.  Note: I validated this empirically by comparing the effect of $$n = e x sign(w)$$ with the effect of $$n =$$ random vector.
+To maximize the effect the pertubation $$w^T \cdot n$$ as on the activation $$w^T \cdot \overline{x}$$ while keeping each element in $$n$$ small, we can set $$n = e \times sign(w)$$.  Note: I validated this empirically by comparing the effect of $$n = e \times sign(w)$$ with the effect of $$n =$$ random vector.
 
 If $$w$$ has dimension $$N$$ and average maginitude of elements $$M$$, then the activation grows by $$eNM$$, which means the perturbation can get quite large for high-dimensional problems. Many infinitesimal changes to the input adds up to one large change in the output.
 
@@ -43,7 +43,46 @@ Extending this linear explanation to neural networks is reasonable and simpler t
 
 ### Linear Perturbation of Non-Linear Models
 
+Considering that neural networks like LSTMs, ReLUs, and maxout networks are deliberately designed to act linearly, the authors expect them to be vulnerable to the kind of perturbations described above.
+
+Let us have:     
+$$\theta=$$ parameters of the model.   
+$$x=$$ input to the model.    
+$$y=$$ ground truth.        
+$$J(\theta , x, y)$$ is the loss function.
+
+To optimize the pertubation, we use $$n= e \cdot sign(\nabla_x J(\theta , x, y))$$ called the **fast gradient sign method**. The gradient of the loss function (wrt to the input) is calculated efficiently with back-propagation.
+
+**Experimental Results**   
+
+With $$e=0.25$$ on MNIST, on a softmax classifier, error rate of 99.9% was achieved (confidence = 79.3%). On a maxout network, error rate of 89.4% was achieved (confidence = 97.6%).
+
+With $$e=0.1$$ on CIFAR-10, error rate of 87.15% was achieved.
+
+![image](https://github.com/user-attachments/assets/835c5c7c-1ae3-47c4-9a39-6671cd619060)
+
+Rotating the input in the direction of the loss gradient also worked well to create adversarial examples. (don't really get this).
+
 ### Adversarial Training of Linear Models Versus Weight Decay
+
+The authors compare adversarial taining to L1 regularization (weight decay or lasso regularization) on a logistic regression model. The goal is to build intuition for why adversarial training would regularize neural networks.
+
+Setting up:    
+Labels: $$y \in$$ {-1,1}          
+Linear prediction: $$z = w^T \cdot x + b$$    
+Probability of class 1: $$P(y=1) = \sigma (z) = \sigma (w^T \cdot x + b)$$     
+Loss function (softplus): $$l(d) = log(1 + exp(d))$$
+Regularization penalty: p
+
+Weight decay seeks to minimize the expected loss: $$E_{\forall(x,y)} l(-y(z)) + \lambda p$$ where $$p$$ is the sum of the weights.
+
+The adversarial version of the expected loss is $$E_{\forall(x,y)} l(y(p - z))$$ where $$p = e \cdot w^T \cdot sign(w)$$.
+
+In the adversarial version, the penalty is subtracted from the model's activation during training, rather than added to training loss. This means that when the model gets really confident, z gets very large and the penalty's effect shrinks. So while weight decay fails to deactivate in the case of more robust predictions, adversarial regularization incentivizes the model to "overcome" the penalty.
+
+The pessimism of lasso regularizations becomes worse with deeper networks and multiclass classification. On maxout neural networks even a $$\lambda$$ of 0.0025 was too pessimistic (stalling the network at a 5% training error). Smaller coefficients let the networks train but failed to regularize it,
+
+Meanwhile using adversarial regularization with e = 0.25 on maxout networks and MNIST gave good results.
 
 ### Adversarial Training of Deep Networks
 
@@ -68,6 +107,18 @@ Extending this linear explanation to neural networks is reasonable and simpler t
 
 **What are the weaknesses?**      
 
-Literature review is very, very skinny. They simple go into one of their previous papers, and only briefly mention some other two.
+1. 
+Literature review is very, very skinny. They simply go into one of their previous papers, and only briefly mention some other two.
+
+2.
+The experimental results from linearly perturbing non-linear models are impressive and cover >1  architecture and datasets, but seem cherry-picked as no data tables are presented or explanations on the choice of e. Just sentence summaries of the best results.
+
+3.
+The general claim here is broader than what their evidence supports. 
+
+This paper only demonstrates that FGSM adversarial examples work on neural networks. It does not unequivocally show that they exploit the linearity of the model, although given the linearity of the FGSM method, it is a reasonable assumption. They could have tried the FGSM method on a less linear network (like the sigmoid network) as a comparison.
+
+Finally, it certainly does not show that most/all other adversarial examples work as a result of neural network linearity.
+
 
 **What are some significant follow up work from this paper? How do they differ from this paper?**    
