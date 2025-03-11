@@ -125,14 +125,11 @@ This is a very fundamental and theoretical paper, which I enjoyed reading. In so
 
 **What are the weaknesses?**      
 
-1. 
-Literature review is very, very skinny. They simply go into one of their previous papers, and only briefly mention some other two.
+1. Literature review is very, very skinny. They simply go into one of their previous papers, and only briefly mention some other two.
 
-2.
-The experimental results from linearly perturbing non-linear models are impressive and cover >1  architecture and datasets, but seem cherry-picked as no data tables are presented or explanations on the choice of e. Just sentence summaries of the best results.
+2. The experimental results from linearly perturbing non-linear models are impressive and cover >1  architecture and datasets, but seem cherry-picked as no data tables are presented or explanations on the choice of e. Just sentence summaries of the best results.
 
-3.
-The general claim here is broader than what their evidence supports. 
+3. The general claim here is broader than what their evidence supports. 
 
 This paper only demonstrates that FGSM adversarial examples work on neural networks. It does not unequivocally show that they exploit the linearity of the model, although given the linearity of the FGSM method, it is a reasonable assumption. They could have tried the FGSM method on a less linear network (like the sigmoid network) as a comparison.
 
