@@ -137,3 +137,5 @@ Finally, it certainly does not show that most/all other adversarial examples wor
 
 
 **What are some significant follow up work from this paper? How do they differ from this paper?**    
+
+Projected gradient descent
