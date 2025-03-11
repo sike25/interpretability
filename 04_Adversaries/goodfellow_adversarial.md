@@ -22,6 +22,7 @@ Szegedy et al (2014b) was the most relevant. it found that:
 2. The same adversarial examples were misclassified across models with different architectures, trained on different subsets of the same data.
 3. Shallow regression models are also vulnerable to adversarial methods.
 4. Training on adversarial examples is a form of regularization.
+5. Adversarial examples were generated using the expensive L-BFGS method.
 
 ### The Linear Explanation of Adversarial Examples
 
@@ -86,16 +87,31 @@ Meanwhile using adversarial regularization with e = 0.25 on maxout networks and 
 
 ### Adversarial Training of Deep Networks
 
-### Different Kinds of Model Capacity
+**Apeal To Universal Approximation**
 
-### Why Do Adversarial Examples Generalize?
+The criticism that deep networks are inherently vulnerable to perturbation is misguided. Theoretically, the universal approximation theorem (Hornik et al, 1989) guarantees that neural networks can estimate any function. 
 
-### Alternative Hypothesis
+This includes functions that are resistant to adversarial examples. Even if that means that to get a function that resists adversarial examples, we must encode this particular objective in our training of the neural network.
+
+**Adversarial Training as Regularization**
+
+We should think of adversarial training as different from data augmentation because augmentation techniques are about transforming inputs in ways that could be naturally occuring (like slight rotation of images). Adversarial examples are unlikely to occur naturally, and are carefully crafted to exploit the way the model does math.
+
+Szegedy (2014b) validates adversarial training as a regularization technique, although it is not shown to outperform drop-out as the state-of-the-art regularization. This is partly because, the authors argue, the cost of generating adversarial examples via L-BFGS limited experimentation.
+
+**New Experiments**
+
+The authors of this paper make Szegedy's second attempt at validation. They implement an adversarial loss function based on the fast gradient method described in **Linear Perturbation of Non-Linear Models**:
+
+$$\overline{J}(\theta, x, y) = \alpha J(,\theta x, y) + (1-\alpha)J(\theta, x + sign(\nabla_x J(\theta, x, y))
+$$ with $$\alpha = 0.5$$ in all experiments.
+
+When applied to a maxout net which was also regularized with dropout, the error rate dropped from 0.94% to 0.84%. Increasing the model size (from 240 to 1600 units per layer) and modifying early stopping criterion further dropped the error rate to 0.782%. Although this does not outperform drop-outs.
+
+More specifiaclly, the error rate on the purely adversarial test set dropped from 89.4% to 17.9%. 
+
 
 ### Summary and Discussion
-
-
-
 
 
 
@@ -104,6 +120,8 @@ Meanwhile using adversarial regularization with e = 0.25 on maxout networks and 
 ### Reflection      
 
 **What are the strengths?** 
+
+This is a very fundamental and theoretical paper, which I enjoyed reading. In some ways, they are validating neural networks which, ten years later, feels classic.
 
 **What are the weaknesses?**      
 
