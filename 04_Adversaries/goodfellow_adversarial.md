@@ -110,6 +110,12 @@ When applied to a maxout net which was also regularized with dropout, the error 
 
 More specifiaclly, the error rate on the purely adversarial test set dropped from 89.4% to 17.9%. 
 
+### Different Kinds of Model Capacity
+
+### Why Do Adversarial Examples Generalize?
+
+### Alternative Hypothesis
+
 
 ### Summary and Discussion
 
