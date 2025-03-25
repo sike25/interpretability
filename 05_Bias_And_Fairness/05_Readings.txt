@@ -5,7 +5,7 @@ Buolamwini, Gender Shades: Intersectional Accuracy Disparities in Commercial Gen
 https://proceedings.mlr.press/v81/buolamwini18a/buolamwini18a.pdf
 
 Chouldechova, Fair prediction with disparate impact: A study of bias in recidivism prediction instruments; 
-https://www.andrew.cmu.edu/user/achoulde/files/disparate_impact.pdf
+https://arxiv.org/pdf/1610.07524
 
 Dissecting racial bias in an algorithm used to manage the health of populations
 https://www.science.org/doi/10.1126/science.aax2342
