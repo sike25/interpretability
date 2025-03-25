@@ -103,7 +103,7 @@ $$\Delta = (t_H - t_L) (FNR_w - FNR_b)$$
 
 When keeping PPV constant amongst groups, the group with the higher base rates of recidivism tend to have higher FPRs and lower FNRs. We can see that this will result in higher penalties for the higher recidivism group.
 
-In the case where $$t_L=0$$ which is applicable to misdemeanors and $$t_L=0$$ is coded as the abscence of incarceration, and $$t_H=1 means some prison time, it is clear that a non-recidivist individual from group with the higher rate of recidivism is $$\frac{FPR_b}{FPR_w}$$ times more like to get some jail time that his counterpart.
+In the case where $$t_L=0$$ which is applicable to misdemeanors and $$t_L=0$$ is coded as the abscence of incarceration, and $$t_H=1$$ means some prison time, it is clear that a non-recidivist individual from group with the higher rate of recidivism is $$\frac{FPR_b}{FPR_w}$$ times more like to get some jail time that his counterpart.
 
 The author also points out that even though high FPRs are correlated with heavier criminal histories, there is still FPR discrepancies among Black and White defendants even within the same prior record subgroups. In other words, the influence of race on high FPRs can not be explained alone by Black defendants having worse criminal records. 
 
