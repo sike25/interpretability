@@ -24,7 +24,7 @@ Note: COMPAS is a recidivism prediction instrument, that is free of predictive b
 
 ### 2. Assessing Fairness
 
-Let:
+Let:         
 $$S = S(x)$$ denote the risk of recidvism, with higher numbers indicating more risk.    
 $$X = x$$ denote the variables.   
 $$R \in {b,w}$$ denote the racial group of the defendant.
@@ -40,7 +40,7 @@ $$P(Y=1|S=s,R=b) = P(Y=1|S=s,R=w)$$
 
 For simplicity, the author introduces $$S_c$$ a coarsened score.
 
-. $$S_c(x)$$ is HR (high-risk) if $$S(x) > S_{HR}$$ and         
+. $$S_c(x)$$ is HR (high-risk) if $$S(x) > S_{HR}$$ and                  
 . $$S_c(x)$$ is LR (low-risk) if $$S(x) > S_{LR}$$
 
 We can think of $$S_c$$ as a binary classifier and write a confusion matrix like:
@@ -52,7 +52,7 @@ We can think of $$S_c$$ as a binary classifier and write a confusion matrix like
 
 **Test Fairness of Sc**
 
-$$S_c(x)$$ is **test-fair** if the positive predictive value does not depend on $$R$$.     
+$$S_c(x)$$ is **test-fair** if the positive predictive value does not depend on $$R$$.        
 That is, the quantity: $$PPV(S_c|R=r) \equiv P(Y=1|S_c=HR, R=r)$$ does not depend on $$R$$.
 
 Another variable to consider is the recidivism prevalence within groups, $$p_r \equiv P(Y=1|R=r)$$.
@@ -63,12 +63,12 @@ $$FPR = \frac{p}{1-p} \frac{1-PPV}{PPV} (1-FNR)$$
 
 From this equation, we can see that when the recidivism prevalence differs across groups, we can not have equal FNR and FPR if the test score $$S_c$$ is to be fair.
 
-This means we can not simulataneously achieve:
+This means we can not simulataneously achieve:        
 1. Equal positive predictive values across groups (test fairness)
 2. Equal false positive and negative rates across groups
 3. When the base rates of recidivism differ between groups
 
-In the case, the base rates of White defendants in the data is 39%, and for Black defendants, it is 51%. So it differs.   
+In the case, the base rates of White defendants in the data is 39%, and for Black defendants, it is 51%. So it differs.      
 This implies a policy trade-off, even error rates versus test fairness.
 
 ### 3. Assessing Impact
@@ -91,14 +91,14 @@ $$\Delta$$ is a measure of disparate impact.
 The expected difference in penalty under the min-max policy is:
 
 $$\Delta \equiv E_{MinMax} (T_{b,y_1} - T_{w,y_2})$$      
-$$= (t_H - t_L) (P(S_c = HR | R = b, Y = y_1) - P(S_c = HR | R = w, Y = y_2)$$
+$$= (t_H - t_L) (P(S_c = HR | R = b, Y = y_1) - P(S_c = HR | R = w, Y = y_2)$$         
 = difference in penalty times difference in recidivism prediction
 
-Therefore:
-**For Non-recidivators**
+Therefore:        
+**For Non-recidivators**        
 $$\Delta = (t_H - t_L) (FPR_b - FPR_w)$$  
 
-**For Recidivators**
+**For Recidivators**        
 $$\Delta = (t_H - t_L) (FNR_w - FNR_b)$$  
 
 When keeping PPV constant amongst groups, the group with the higher base rates of recidivism tend to have higher FPRs and lower FNRs. We can see that this will result in higher penalties for the higher recidivism group.
@@ -121,7 +121,7 @@ This value lets the author establish the maximum possible value (sharp bound) fo
 
 $$\Delta \leq (t_H - t_L) d_{TV}(f_{b,y}, f_{w,y})$$
 
-Where $$f_{r,y}(s)$$ be the score distribution for race $$r$$ and recidivism outcome $$y$$.     
+Where $$f_{r,y}(s)$$ be the score distribution for race $$r$$ and recidivism outcome $$y$$.       
 And $$d_{TV}(...)$$ is the total variation distance.
 
 
