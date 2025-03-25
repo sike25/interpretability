@@ -27,18 +27,18 @@ given its applications in skin disease recognition and law enforcement.
 
 **Automated Facial Analysis**
 
-Face detection, face classification, face recognition, emotion identificatio.
+Face detection, face classification, face recognition, emotion identification.
 
 Applications include smartphone locks and galleries, autism therapy. More controversial applications include: determination of sexuality from dating app pictures, Faception's determination of personality (features like IQ, occupation, propensity to crime) from faces.
 
 Automated facial analysis is used in law enforcement, and previous work has shown that their systems have lower accuracies for women, Black people and young people (18 to 30).
 
-Previous work that explored the impact of ethnicity on gender classification do not include African facial samples or in other case, had broad categories of Caucasian and non-Caucasian.
-This paper explores gender classification on African faces.
+Previous work that explored the impact of ethnicity on gender classification do not include African facial samples or in another case, had broad categories of Caucasian and non-Caucasian.
+This paper explores gender classification with African faces included.
 
 **Benchmarks**
 
-Large vision datasets are often collated using face detection algorithms which can themselves have systematic errors The resulting datasets encode those same biases.
+Large vision datasets are often collated using face detection algorithms which can themselves have systematic errors. The resulting datasets encode those same biases.
 
 LFW, a major face recognition benchmark, had 77.5% men and 83.5% White samples. And models trained on this dataset have only been evaluated for overall accuracies. It is not obvious how well they would do on subgrouped tests.
 
@@ -56,26 +56,26 @@ Racial and ethnic labels vary across geography and with time. So, the authors us
 
 1. **IJB-A** is a US government benchmark released by the National Institute of Standards and Technology (NIST) in 2015. The authors selected it because it was explicitly created to be geographically diverse. This dataset consists of 500 unique public figures. It was labelled manually using the Fitzpatrick skin types.
 
-2. **Adience** was selected because it is also a recent benchmark. It contained 2,285 unique individuals and only 2,194 could be classified by skin type and gender.
+2. **Adience** was selected because it is also a recent benchmark. It contained 2,285 unique individuals but only 2,194 could be classified by skin type and gender.
 
-For both these datasets, the authors labelled one image with one skin type.
+For both these datasets, the authors labelled one skin type per one image.
 
 **3.3. Creation of Pilot Parliaments Benchmark**
 
 Preliminary analysis showed an overrepresentation of light men, and an underrepresentation of dark women and dark folks in general.
 
-The authors create the Pilot Parliaments Benchmark to do better. It contains 1270 individuals from three African countries (Rwanda, Senegal, South Africa, South Africa) and three European countries (Iceland, Finland, Sweden). 
+The authors create the Pilot Parliaments Benchmark to do better. It contains 1,270 individuals from three African countries (Rwanda, Senegal, South Africa, South Africa) and three European countries (Iceland, Finland, Sweden). 
 
 The individuals are parliamentarians. They are public figures with publically available images. These contries were selected for the gender parity of their national parliaments. And deliberately from two groups of countries with starkly different skin types.
 
-Although, as a result of the official nature of the images, pose, illumination and expressions have little variation. This is important because pose, illumination and expression (PIE) have been shown to impact the accuracy of automated facial analysis.
+As a result of the official nature of the images, pose, illumination and expressions have little variation. This is important because pose, illumination and expression (PIE) have been shown to impact the accuracy of automated facial analysis.
 
 ![image](https://github.com/user-attachments/assets/ee92d1b4-2f81-40d8-8c69-a7196cdf1cd1)
 
 
 **3.4. Intersectional Labeling Methodology**
 
-1. **Skin Type Labels:** The authors use the Fitzpatrick classification system (Type I to Type VI). Due to its creation for assessing skin cancer risk, system is skewed to underrepresent darker shades on its limited spectrum. But it will do.
+1. **Skin Type Labels:** The authors use the Fitzpatrick classification system (Type I to Type VI). Due to its creation for assessing skin cancer risk, this system is skewed to underrepresent darker shades on its limited spectrum. But it will do.
 ![image](https://github.com/user-attachments/assets/5ca7b14c-9055-49e3-8efb-34defdd4edb1).
 
 2. **Gender Labels:** They use "male" and "female" labels, based on perception of the subjects.
