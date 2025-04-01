@@ -41,7 +41,8 @@ Sundararajan et al (2017) introduced the intepretability technique of Integrated
 
 Here is an overview of the method:
 
-![image](https://github.com/user-attachments/assets/00b37894-e24b-40fb-ba5c-e1d15d206a96)
+![image](https://github.com/user-attachments/assets/dd8d92f2-4642-47a1-8d6b-ef11cb2a06a8)
+
 
 Model:  $$F: R^n \to [0,1]$$
 Input:  $$x = (x_1 ... x_n) \in R^n$$
