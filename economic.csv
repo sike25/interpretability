@@ -1,30 +1,30 @@
-index,market,state,enrollment
-0,Atlanta,GA,520034
-100,Austin,TX,1530623
-177,Baltimore,MD,330101
-220,Boston,MA,472497
-363,Charlotte,NC,546045
-400,Chicago,IL,699580
-494,Chicago Suburbs,IL,699580
-565,Dallas/Ft Worth,TX,1530623
-765,Denver,CO,325586
-880,Detroit,MI,475669
-952,Houston,TX,1530623
-1160,Los Angeles,CA,2396351
-1412,Manhattan,NY,1121285
-1689,Nashville,TN,294994
-1726,Northern New Jersey,NJ,363215
-1771,Northern Virginia,VA,526470
-1865,Orange County,CA,2396351
-1959,Philadelphia,PA,628647
-2048,Phoenix,AZ,563340
-2113,Raleigh/Durham,NC,546045
-2145,Salt Lake City,UT,386226
-2171,San Diego,CA,2396351
-2272,San Francisco,CA,2396351
-2346,Seattle,WA,315071
-2426,South Bay/San Jose,CA,2396351
-2471,South Florida,FL,934983
-2652,Southern Maryland,MD,330101
-2706,Tampa,FL,934983
-2758,Washington D.C.,DC,122546
+region,per_capita_income
+Atlanta,68027
+Austin,80471
+Baltimore,76923
+Boston,100880
+Charlotte,69588
+Chicago,77429
+Chicago Suburbs,77429
+Dallas/Ft Worth,74165
+Denver,89297
+Detroit,66098
+Houston,72453
+Los Angeles,80898
+Manhattan,91448
+Nashville,79453
+Northern New Jersey,91448
+Northern Virginia,89396
+Orange County,88897
+Philadelphia,78761
+Phoenix,66635
+Raleigh/Durham,75129
+Salt Lake City,70395
+San Diego,79122
+San Francisco,130730
+Seattle,99939
+South Bay/San Jose,148036
+South Florida,84302
+Maryland,76923
+Tampa,63789
+Washington D.C.,89396
