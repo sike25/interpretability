@@ -5,7 +5,7 @@
 This paper presents a visual debugging tool for sequence to sequence models.
 
 Paper: [https://arxiv.org/pdf/1804.09299](https://arxiv.org/pdf/1804.09299)     
-Code:  [http://seq2seq-vis.io]( http://seq2seq-vis.io)
+Code:  [https://github.com/HendrikStrobelt/Seq2Seq-Vis](https://github.com/HendrikStrobelt/Seq2Seq-Vis)
 
 ### 1. INTRODUCTION
 
@@ -102,6 +102,9 @@ SEQ2SEQ-VIS lets the user see that the connection from "get" to **dunkel**
 is very strong (wide). This means that the model is strongly focusing on 
 "dunkel" when generating the next word in the English translation.
 
+![image](https://github.com/user-attachments/assets/d61c6425-fa62-46a6-a60d-5cf9733c7a9d)
+
+
 **Prediction (S4) Error?**
 
 SEQ2SEQ-VIS can also let us see the probabilities the model assigns to each word
@@ -147,8 +150,10 @@ brainstorming model-level fixes.
 Using these goals, the authors comple five tasks for SEQ2SEQ-VIS:
 
 1. T1 - Create visualizations of each of our five decision stages [G1]
-2. T2 - Visualize
-3. T3 - Explore vectors produced by decoder, encoder stages) and look at their nearest neighbor vectors pulled from the training set.
+2. T2 - Visualize the progression of latent vector sequences over time [G2]
+3. T3 - Explore vectors produced by decoder, encoder stages) and look at their nearest neighbor vectors pulled from the training set [G2]
+4. T4 - Generate reasonable alternative decisions for different stages of the model to compare possible corrections [G1, G3]
+5. T5 - Create an interface with a cohesive front-end for many sequence-to-sequence problems (like translation, summary, and generation) [G1, G2, G3]
 
 
 ### 5. DESIGN OF Seq2Seq-Vis
@@ -217,6 +222,8 @@ Flask connects the frontend with the back.
 
 
 **What are the weaknesses?**      
+1. The SEQ2SEQ-VIS tool does not seem applicable to sequence-to-sequence models that do not follow the five stages as laid out.
+2. The SEQ2SEQ-VIS requires non-trivial modifications to the model.
 
 
 **What are some significant follow up work from this paper? How do they differ from this paper?**   
