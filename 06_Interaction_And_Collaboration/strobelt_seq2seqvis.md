@@ -159,15 +159,46 @@ Using these goals, the authors comple five tasks for SEQ2SEQ-VIS:
 ### 5. DESIGN OF Seq2Seq-Vis
 
 SEQ2SEQ-VIS was designed by experts in machine learning and experts in visualization. 
-It facilitates two major modes of analysis: the translation view and the neighborhood view.
+It facilitates two major modes of analysis: the translation view (the upper part) and the neighborhood view (the lower part).
 
-#### 5.1. Translation View
+![image](https://github.com/user-attachments/assets/bb0bd258-5dc8-4e73-80ca-1a5290f7f274)
 
-#### 5.2. Neighborhood View
+We have each of the five stages of the model decision visualized. On top is the attention visualization with the source sequence in blue and the target sequence in yellow. Attention values are represented as edges between them- the larger the value, the thicker the edge [S3]. To prevent visual clutter, very skinnier edges are omitted.
+
+The top K most likely words at each time step are listed under the chosen words of the target sequence [S4]. Below that is the Beamsearch Tree [S5]. 
+
+Below the tree, the neighborhood view begins. 
+
+This view is concerned primarily with allows us to compute sequence vectors (from the encoder and decoder, or even context vectors from the attention stage) and then search for similar vectors (precomputed from training data samples). These vectors are visualized in the state trajectories and the neighbor list. 
+
+The vectors have their dimensions reduced by t-SNE (t-Distributed Stochastic Neighbor Embedding), non-metric MDS (Multidimensional Scaling) or a custom projection, so they and their distances from each other can be represented on our 2D screen. When we hover an input vector, its neighborhood vectors are highlighted. 
+
+Furthermore, if three states from a decoder sequence have one common neighbor, that neighbor has its radius to $$r(x) = \sqrt{2x} = 2.5$$ so more connected neighbors are bigger. Each input vector also has its own little cut out in the trajectory pictograms where we can more cleary examine its neighbors and how each vector changes in time. 
+
+Clicking on a vector pulls up its neighbor list on the right, with the neighbor vectors written out in their original training sentences. 
 
 #### 5.3. Global Encodings and Comparison Mode
 
+SEQ2SEQ-VIS has a unified look and feel, with a consistent color scheme (encoder - blue, decoder - yellow, pivot - green, compare - violet). Clickable visual elements have round corners. Hovering highlights elements in red. 
+
+We can trigger comparison mode which overlays elements and highlights differences in violet. Triggers are disabled in the comparison view.
+
 #### 5.4. Interacting With Examples
+
+**Model-Focused Interactions**
+
+This helps model architects produce similar examples to a current sequence to test small, reasonable variations for various model stages. The user can click on a word to substitute it with a similar one. 
+The program searches for neighbors for the selected word and displays them in a word cloud. Clicking on one of the option triggers an automatic replacement and a new translation in comparison mode.
+
+![image](https://github.com/user-attachments/assets/74115557-196a-4c86-b7b3-5e049a73f1a7)
+
+Another model-focused interaction lets the user change predicted sequences (by modifying attention values) by repeatedly clicking an encoder word to give it more weight. 
+
+
+
+
+
+
 
 #### 5.5. Design Iterations
 
@@ -219,7 +250,7 @@ Flask connects the frontend with the back.
 ### Reflection      
 
 **What are the strengths?** 
-
+1. The SEQ2SEQ-VIS tool is beautiful, involved engineering.
 
 **What are the weaknesses?**      
 1. The SEQ2SEQ-VIS tool does not seem applicable to sequence-to-sequence models that do not follow the five stages as laid out.
