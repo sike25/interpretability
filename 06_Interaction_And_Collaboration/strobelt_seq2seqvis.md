@@ -125,6 +125,9 @@ if she had forced the system to pick "dark" after "gets". This would have given 
 
 ### 5. DESIGN OF Seq2Seq-Vis
 
+SEQ2SEQ-VIS was designed by experts in machine learning and experts in visualization. 
+It facilitates two major modes of analysis: the translation view and the neighborhood view.
+
 #### 5.1. Translation View
 
 #### 5.2. Neighborhood View
