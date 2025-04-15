@@ -145,7 +145,9 @@ with a running sequence to sequence model through a REST API.
 
 **Model Backend**
 
-The sequence to sequence models here were built with the OpenNMT toolkit.
+The sequence to sequence models here were built with the OpenNMT toolkit. 
+The authors plan to distribute Seq2Seq-Vis as the default visualization mode
+for OpenNMT.
 
 The model is modified to expose some internal components 
 like latent vectors (Internal state vectors), 
