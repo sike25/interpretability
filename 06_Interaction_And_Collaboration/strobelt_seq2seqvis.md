@@ -13,10 +13,12 @@ Attention-based sequence-to-sequence models (seq2seq) (or encoder-decoder models
 like (machine translation, natural language generation, summaries). But the deep net structure of these models makes predictions 
 hard to explain.
 
-SEQ2SEQ-VIS is a visual analytics tool that attempts to help with this by meeting three goals:
-1. Examine model decisions (errors)
-2. Connect decisions with training samples
-3. Explore what-if scenarios
+For example, when using a rule-based translation system, non-trivial mistranslations can be
+investigated by examining what rule misfired. Neural networks do not have explicit rules to check. 
+
+This work aims to keep the great performance of deep nets but aims to provide
+the ability to interactively explore issues using SEQ2SEQ-VIS — a visual debugging tool.
+
 
 ### 2. SEQUENCE-TO-SEQUENCE MODELS AND ATTENTION
 
@@ -119,9 +121,35 @@ increase the value of K (the K-most likely next words, the width of the search t
 ![image](https://github.com/user-attachments/assets/2dbb4738-8089-4f8d-b52e-45a1b51eb65f)
 
 SEQ2SEQ-VIS also lets the user evaluate what would have happened 
-if she had forced the system to pick "dark" after "gets". This would have given a correct solution.
+if she had forced the system to pick "dark" after "gets". 
+And we see this would have given a correct solution.
 
 ### 4. GOALS AND TASKS
+
+SEQ2SEQ-VIS aims to meet three domain goals for sequence-to-sequence models:    
+  
+1. **G1 - Examine Model Decisions (errors)**      
+SEQ2SEQ-VIS helps users examine the model's decision chain (encoding, decoding, attention, and beam search)
+by providing the ability to visualize parts of each stage. 
+
+2. **G2 - Connect Decisions with Training Data Samples**    
+Because, the training data is the model's worldview, examining past
+training data samples similar to the inference 
+instance we are investigating is often revealing.
+
+3. **G3 - Test Alternative Decisions**
+SEQ2SEQ-VIS also has the goal of allowing users to explore what-if scenarios by
+intervening in model decisions at different steps to see what possible outcomes could have resulted
+from a different decision.  
+This is important in understanding what decisions would have been "correct" and therefore, in 
+brainstorming model-level fixes.
+
+Using these goals, the authors comple five tasks for SEQ2SEQ-VIS:
+
+1. T1 - Create visualizations of each of our five decision stages [G1]
+2. T2 - Visualize
+3. T3 - Explore vectors produced by decoder, encoder stages) and look at their nearest neighbor vectors pulled from the training set.
+
 
 ### 5. DESIGN OF Seq2Seq-Vis
 
