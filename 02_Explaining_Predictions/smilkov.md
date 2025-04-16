@@ -1,23 +1,50 @@
 ## SmoothGrad: Removing Nise by Adding Noise
 **Smilkov et al, 2017**
 
-### Introduction
+Paper: [https://arxiv.org/pdf/1706.03825](https://arxiv.org/pdf/1706.03825)             
+Code:  [https://pair-code.github.io/saliency/#smoothgrad](https://arxiv.org/pdf/1706.03825)
 
-Interpretability of deep neural networks matter for trust, debugging and insight. 
+### 1. Introduction
 
-Saliency maps (sensitivity maps, pixel attribution) is a common way of explaining visual models. They can be occlusion or gradient-based and they highlight the parts of input images that are important to prediction although the gradient-based ones are often visually noisy and also highlight parts of images that a person would not expect to be relevant to prediction. Whether this phenomenon truly is noise or an expression of the actual working of the model is unclear.
+Interpretability of deep neural networks matter for trust, debugging and insight. Saliency maps (sensitivity maps, pixel attribution) is a common way of explaining visual models.  
 
-All that said, Smoothgrad is a method for clarifying gradient based saliency maps. 
-It works by adding small amounts of noises to the input image many times, computing the gradient map for each noisy input and finding their average to produce a final saliency map.
-Smoothgrad can be combined with other algorithms.
+They can be occlusion or gradient-based and they highlight the parts of input images that are important to prediction. In practise, the resulting masks do tend to highlight portions od images that we would reasonably think should be important for a prediction.
 
-They also find that adding noise at training time further improves clarity of saliency maps.
+![image](https://github.com/user-attachments/assets/e44ebcbd-f9df-4b50-a4d4-ff193480ae97)
 
-### Gradients as Sensitivity Maps
+Although, the gradient-based ones are often visually noisy and also highlight parts of images that a person would not expect to be relevant to prediction. Whether this phenomenon truly is noise or an expression of the actual working of the model is unclear.
 
-M = gradient of the predicted probabilities with respect to the input image x
+All that said, Smoothgrad is a method for clarifying gradient based saliency maps. It works by adding small amounts of noises to the input image many times, computing the gradient map for each noisy input and finding their average to produce a final saliency map.
 
-We add gaussian noise.
+Smoothgrad can be combined with other algorithms. They also find that adding noise at training time further improves clarity of saliency maps.
+
+### 2. Gradients as Sensitivity Maps
+
+Consider an image classifier that classifies an input image $$x$$ into classes in the set $$C$$. The classifier computes an activation $$S_c$$ for each class $$c \in C$$. The final class prediction is the class with the highest activation:
+
+$$class(x) = argmax_{c \ in C} S_c(x)$$
+
+One can then build a sensitivity map, $$M_c(x)$$ as the gradient of the predicted probabilities with respect to the input image $$x$$:
+
+$$M_c(x) = \partial S_c(x) / \partial x$$ 
+
+Intuitively, $$M_c(x)$$ is how much a change to $$x$$ would influence $$S_c(x)$$.
+
+#### 2.1. Previous Work on Enhancing Sensitivity Maps
+
+Using gradients as a measure of importance  can create a situation where a very important feature pushed the activation very close to 0 or 1 (saturates it), and the gradient becomes very small even though the feature is critical for the prediction.
+
+This is why methods like Integrated Gradients integrate along a path from a baseline to the full image- to capture the feature's relevance across the entire range (not just at the end which can be prone to saturation). Other methods are: Layerwise Relevance Propagation and DeepLift.
+
+Another method of enhancing saliency maps is by modifying backpropagation. Examples include: deconvolution (which ignores the "gating" behavior of ReLU during backpropagation and passes gradients through whether or not they were activated in the forward pass) and guided backpropagation.
+
+Other methods like Grad-CAM and CAM (see zhou.md in this folder) combine gradient information across layers to create visualizations.
+
+
+#### 2.2. Smoothing Noisy Gradients
+
+
+
 
 ###  Experiments
 
@@ -86,3 +113,11 @@ Adds noise to decision boundaries instead of the input then examines the fusion 
 Smooth Grad-CAM++: An Enhanced Inference Level Visualization Technique for Deep Convolutional Neural Network Models       
 https://arxiv.org/abs/1908.01224                
 Combines SmoothGrad and GradCAM++ methods
+
+**New Terms**
+Gradient-based vs Occlusion-based methods for creating saliency maps
+Integrated graidentnt
+Layerwise Relevance Propagation
+DeepLift
+Deconvolution
+Guided Backpropagation
