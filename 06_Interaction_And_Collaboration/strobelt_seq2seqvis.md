@@ -185,22 +185,17 @@ We can trigger comparison mode which overlays elements and highlights difference
 
 #### 5.4. Interacting With Examples
 
-**Model-Focused Interactions**
+Model and language focused interactions shift SEQ2SEQ-VIS into comparison mode.
 
-This helps model architects produce similar examples to a current sequence to test small, reasonable variations for various model stages. The user can click on a word to substitute it with a similar one. 
+Model-focused interactions helps model architects produce similar examples to a current sequence to test small, reasonable variations for various model stages. The user can click on a word to substitute it with a similar one. 
 The program searches for neighbors for the selected word and displays them in a word cloud. Clicking on one of the option triggers an automatic replacement and a new translation in comparison mode.
 
 ![image](https://github.com/user-attachments/assets/74115557-196a-4c86-b7b3-5e049a73f1a7)
 
 Another model-focused interaction lets the user change predicted sequences (by modifying attention values) by repeatedly clicking an encoder word to give it more weight. 
 
+Language-focused Interactions lets users write direct changes to the source or target sequences.
 
-
-
-
-
-
-#### 5.5. Design Iterations
 
 ### 6. IMPLEMENTATION
 
@@ -240,17 +235,71 @@ Flask connects the frontend with the back.
 
 ### 7. USE CASES
 
+**Date Conversion**
+
+Task: Convert various date formats into the unified YYYY-MM-DD format.
+
+![image](https://github.com/user-attachments/assets/f1176031-37a8-49cf-ab29-8ffb07265221)
+
+**Abstractive Summarization**
+
+![image](https://github.com/user-attachments/assets/8afd0f01-d642-47fb-9620-e715fdc037ac)
+
+**Machine Translation**
+
+![image](https://github.com/user-attachments/assets/adc3a628-3aa1-4ad1-9908-34fede555035)
+
+
 ### 8. RELATED WORK
+
+**Global Model Analysis**
+
+This is typically visualizing inside trained deep learning models.
+
+CNNs
+1. Finding images that maximize the activation of convolutional units.
+2. Deconvolutional networks.
+3. Projecting neural activity onto images.
+
+RNNs
+1. Understanding slected cells (some of which model clear phenomena like parentheses).
+2. LSTMVis (by these authors, too) lets us understand how combinations of hidden states activate.
+3. Examining activation pattern differences between correct and misclassified examples.
+4. RNNVis uses word clouds to show words that typically correspond to certain activation patterns
+5. RNNbow shows gradient changes during training to help us see how the model is learning
+
+**Instance Based Analysis**
+
+This is about understanding model behavior on a single input.
+
+CNNs
+1. Small perturbations in input images can drastically change predictions.
+2. Picasso is an interactive visualization tool that lets people distort image inputs to models.
+3. Interactively tweak feature values and observe how predictions change.
+
+RNNs
+1. Gradient based methods to attribute tokens to predictions.
+
+But the method of finding neigbors in the training data used in this paper is new. And the authors here
+move away from treating the model as a black box and lean into the fact that the users of SEQ2SEQ-VIS 
+understand how the model works.
+
 
 ### 9. CONCLUSIONS AND FUTURE WORK
 
+Work has been impactful since release (5,500 page views, 156 likes on Github project).
+
+1. Extend tool to more sequences (video, audio, images?)
+2. Greater respect for the sequential order of sequences
+   
+The authors hope to inspre more methods that allow us to fix models without completely retraining them.
 
 ---
 
 ### Reflection      
 
 **What are the strengths?** 
-1. The SEQ2SEQ-VIS tool is beautiful, involved engineering.
+1. The SEQ2SEQ-VIS tool is beautiful and involved engineering.
 
 **What are the weaknesses?**      
 1. The SEQ2SEQ-VIS tool does not seem applicable to sequence-to-sequence models that do not follow the five stages as laid out.
@@ -268,5 +317,6 @@ Flask connects the frontend with the back.
 6. OpenNMT
 7. D3 library
 8. TSNE and MDS projections
+9. Deconvolutional networks
 
 
