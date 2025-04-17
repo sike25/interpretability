@@ -1,4 +1,4 @@
-## SmoothGrad: Removing Nise by Adding Noise
+## SmoothGrad: Removing Noise by Adding Noise
 **Smilkov et al, 2017**
 
 Paper: [https://arxiv.org/pdf/1706.03825](https://arxiv.org/pdf/1706.03825)             
@@ -40,43 +40,62 @@ Another method of enhancing saliency maps is by modifying backpropagation. Examp
 
 Other methods like Grad-CAM and CAM (see zhou.md in this folder) combine gradient information across layers to create visualizations.
 
-
 #### 2.2. Smoothing Noisy Gradients
 
+An explanation for why gradient maps are noisy is that the derivative of $$S_c(x)$$ tends to fluctuate sharply between pixels. 
+
+![image](https://github.com/user-attachments/assets/31e758e1-666c-43f8-980e-3d1ee0654a67)
+
+This suspicion is what inspired the authors to consider averaging neigborhoods around each pixel (i.e. smoothening the gradients). They do this by taking random pixels around the target pixel, noising them up, finding that derivative and then averaging them.
+
+$$ \hat{M_c(x)} = \frac{1}{n} \sum_1^{1} M_c (x + N(0, \sigma^2))$$
+
+$$n$$ = number of samples.    
+$$N(0, \sigma^2)$$ = Gaussian noise with standard deviation, $$\sigma$$.
+
+This is SMOOTHGRAD.
+
+### 3.  Experiments
 
 
 
-###  Experiments
+#### 3.1. Visualiziation Techniques
 
-**Visualiziation Techniques**
-1. Absolute value of gradients      
-2. Capping outlying values      
-3. Multiplying maps with the input images     
+**Absolute value of gradients**
 
-**Hyperparamterization**         
+**Capping outlying values**      
+
+**Multiplying maps with the input images**
+
+#### 3.2. Hyperparamterization        
 The two hyperparameters in this are the sample size and the noise level or standard devation input to our Gaussian random variable.
 
 Noise is optimal at around 10 to 20%. How is SD converted to noise percentages?
 
 Clarity improves with sample size but diminishing returns are observed as the sample size surpasses 50. 
 
-**Comparison to Baseline Methods**      
+#### 3.3. Qualitative Comparison to Baseline Methods
 
 SmoothGrad is compared qualitatively with three gradient methods: vanilla, Integrated Gradients (Sundararajan et al., 2017), and Guided BackProp (Springenberg et al., 2014).
 The authors claim to observe SmoothGrad outperforms the rest in visual coherence. Guided BackProp produces the sharpest images but struggles with uniform backgrounds while SmoothGrad excels with them. 
 SmoothGrad also outperforms the rest on discriminativity with BackProp performing the worst.
 
-**Adding Noise during Training**
+
+#### 3.4. Combining SmoothGrad with other Methods
+
+#### 3.5. Adding Noise during Training
 
 Apart from averaging several saliency maps from several noisy inputs, 
 
-### Conclusion and Future Work
+### 4. Conclusion and Future Work
 
 More theoretical inquiry into the idea that noisy gradients cause noisy maps.
 
 Other ways to smooth noisy maps.
 
 Quantitative assessments for assessing saliency maps. 
+
+---
 
 ### Reflection 
 
@@ -115,9 +134,9 @@ https://arxiv.org/abs/1908.01224
 Combines SmoothGrad and GradCAM++ methods
 
 **New Terms**
-Gradient-based vs Occlusion-based methods for creating saliency maps
-Integrated graidentnt
-Layerwise Relevance Propagation
-DeepLift
-Deconvolution
-Guided Backpropagation
+1. Gradient-based vs Occlusion-based methods for creating saliency maps
+2. Integrated graident
+3. Layerwise Relevance Propagation
+4. DeepLift
+5. Deconvolution
+6. Guided Backpropagation
