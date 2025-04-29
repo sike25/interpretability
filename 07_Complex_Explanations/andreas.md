@@ -98,7 +98,7 @@ These results show that the network's language for describing an object sets ali
 Now, the authors check whether encoder outputs contain logical constructions (negation - not, conjuction - and, disjunction - or) that
 are found in human language and are specifically rampant in this dataset/ task.
 
-**Negation**
+**Negation**                
 To look for negation, they look for a consistent mathematical operation that could transform a vector $$f(W,X)$$ representing all "the circles" into one representing "not circles".
 
 They collect examples of the form $$(e, f, e', f')$$ where:
@@ -106,17 +106,44 @@ They collect examples of the form $$(e, f, e', f')$$ where:
 2. $$f$$ and $$f'$$ are the corresponding RNN representations.
 3. $$rep(e) = rep(f)$$ and $$rep(e') = rep(f')$$, so representations match the human phrases in meaning.
 
-The idea is that if the model does not have some notion of negation, there would be no predictable relationship between $$(f, f')$$. If the model does have some notion of negation, then there exists a transformation N such that $$N \cdot f = f'$$
+The idea is that if the model does not have some notion of negation, there would be no predictable relationship between $$(f, f')$$. But if the model does have some notion of negation, then there exists a transformation N such that $$N \cdot f = f'$$
 
+Using example $$(f, f')$$, they solve for $$\hat{N}$$, a matrix which minimizes the sum of squared differences between the predicted negation $$N \cdot f$$ and the actual negation $$f'$$. 
+
+They solve for N using the least squares solution:
+
+F = $$[f_1, ... f_n]^T$$ (each f as a row)          
+F' = $$[f'_1, ... f'_n]^T$$ (each f' as a row)    
+- $$\hat{N} = (F^T F)^{-1} (F^T F')$$
+
+Then they test how often $$rep(Nf) = rep(e')$$ on separate, test examples.     
+They observe 97% agreement for individual objects and 45% agreement on full representations.
+
+This implies that $$\hat{N}$$ is analogous to negation in natural language. And that the concept of negation is linear.
+
+**Conjuction and Disjunction**    
+Here, they collect examples of the form $$(e, f, e', f', e'', f'')$$ where:
+1. $$rep(e) = rep(f)$$
+2. $$rep(e') = rep(f')$$
+3. $$rep(e'') = rep(f'')$$
+4. $$e'' = e \cap e'$$ conjuction OR $$e'' = e \cup e'$$ disjunction.
+
+They then solve for a matrix M that minimizes the difference between the predicted conjuction $$(Mf + Mf')$$ and the actual conjuction $$f"$$. Or disjunction, depending on the case. 
+
+They run disjunction tests as they did with negation and observe 92% agreement for individual objects but 19% on full representation. They don't report their conjuction test results. We assume they are not favorable. I hypothesize that the model captures conjuction and disjunction in ways that are less linear than negation.
 
 ### 6. Conclusions
+
+The authors discovered a way to explore whether the compositional structure found in natural language can also be found in vectors produced by a neural network which has never seen human language. They do this by concentrating on the truth of the vector representation when applied to solve a problem, rather than the direct structure of it.
+
+They also posit, as a future question, asking how or whether these vectors capture hierarchical information like in "not (blue and circular)". 
 
 ---
 
 ### Reflection      
 
 **What are the strengths?** 
-
+1. Interesting and creative methodology.
 
 **What are the weaknesses?**      
 1. Very confusing. Explanations are incredibly opaque.
@@ -125,6 +152,9 @@ The idea is that if the model does not have some notion of negation, there would
 
 
 **What are some significant follow up work from this paper? How do they differ from this paper?**   
+
+
 **New Terms**
 1. GRU Cells
+2. Least squares N calculation
 
