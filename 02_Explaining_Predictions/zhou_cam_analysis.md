@@ -3,6 +3,8 @@
 
 Visualization of the importance of input image portions for classifications, achieved by a network with only convolutional layers and topped with a global average pooling layer.
 
+Paper: https://arxiv.org/abs/1512.04150
+
 ### Related Work
 
 1. **Weakly Supervised Object Localization:**
