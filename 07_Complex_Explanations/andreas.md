@@ -7,9 +7,7 @@ a communication game, the "language" they learn to solve the task shares the com
 
 Paper: [https://arxiv.org/pdf/1707.08139](https://arxiv.org/pdf/1707.08139)
 
-### 1. Introduction
-
-### 2. Task
+### 1. Task
 
 The authors use a communication game to get two neural networks to develop a shared 'language',
 so they can analyze this language and figure out whether it shares anything with our natural language.
@@ -150,8 +148,6 @@ They also posit, as a future question, asking how or whether these vectors captu
 2. $$W_i$$ was used to refer to a specific object in a world $$W$$. Then $$W_i$$ was used to refer to a world in a set of worlds { $$W_i$$ }. I can not believe no reviewer caught this.
 3. $$e(W), f(W)$$ are more accurately described as $$e(W,X), f(W,X)$$.
 
-
-**What are some significant follow up work from this paper? How do they differ from this paper?**   
 
 
 **New Terms**
