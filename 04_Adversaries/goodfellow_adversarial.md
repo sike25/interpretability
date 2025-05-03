@@ -141,7 +141,6 @@ This paper only demonstrates that FGSM adversarial examples work on neural netwo
 
 Finally, it certainly does not show that most/all other adversarial examples work as a result of neural network linearity.
 
-
-**What are some significant follow up work from this paper? How do they differ from this paper?**    
+**New Terms**    
 
 Projected gradient descent
