@@ -305,9 +305,6 @@ The authors hope to inspre more methods that allow us to fix models without comp
 1. The SEQ2SEQ-VIS tool does not seem applicable to sequence-to-sequence models that do not follow the five stages as laid out.
 2. The SEQ2SEQ-VIS requires non-trivial modifications to the model.
 
-
-**What are some significant follow up work from this paper? How do they differ from this paper?**   
-
 **New Terms**:
 1. beam search 
 2. nlp pathway   
