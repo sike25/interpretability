@@ -40,7 +40,7 @@ To maximize the effect the pertubation $$w^T \cdot n$$ as on the activation $$w^
 
 If $$w$$ has dimension $$N$$ and average maginitude of elements $$M$$, then the activation grows by $$eNM$$, which means the perturbation can get quite large for high-dimensional problems. Many infinitesimal changes to the input adds up to one large change in the output.
 
-Extending this linear explanation to neural networks is reasonable and simpler than previous explantions.
+Extending this linear explanation to neural networks is reasonable and simpler than previous explanations.
 
 ### Linear Perturbation of Non-Linear Models
 
