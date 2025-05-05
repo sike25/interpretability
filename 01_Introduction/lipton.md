@@ -19,18 +19,23 @@ One source of conflict is the fact that the goal error minimization in supervise
 
 **2.1. Trust**
 
-Some describe interpretability as a prequisite to trust. What is trust?
-1. Confidence that the model will perform well. For a sufficiently accurate model, we can expect it to perform well and we don't need interpretability.
-2. 
-
+Some describe interpretability as a prequisite to trust. What is trust? Is it confidence that the model will perform well? For a sufficiently accurate model, we can expect it to perform well and we don't need interpretability? But even a good model can be biased (for example, have racial bias in predicting crime rates) and so it is also important to consider for what examples for which it is accurate. Another aspect to trust is how we feel letting the model take charge? Does it make errors for the same examples a human might? If so, maybe we can trust it.
 
 **2.2. Causality**
 
+Interpretability is attractive for understanding what features lead to a decision. This kind of knowledge is often exploited to study possible causal relationships like with thalidomide and birth defects.
+
 **2.3. Transferability**
+
+Humans have far richer generalization skills, but models are at times deployed in situations that need stronger generalization than they have. This includes dynamic environments, scenarios when the model's own performance alters the environment and adversarial situations. Even deliberate adjustments to features that go into calculating FICO scores which do not necessarily correlate with an ability to repay debt.
 
 **2.4. Informativeness**
 
+We can also use models to provide human decision makers with information, as opposed to using them to make decisions. Interpretations or explanations from models can be valuable even if they don't reveal the model's internal workings (like showing similar cases that support a diagnosis). Sometimes we use supervised learning approaches when our actual goal is more like unsupervised learning - exploring and understanding data patterns.
+
 **2.5. Fair and Ethical Decision-Making**
+
+As models are deployed in critical social contexts like credit approval and recidivism prediction, interpretability is important in sniffing out bias and unfairness. The EU passed that any individual subject to algorithmic decisions has the right to explanation, and the right to contest based on the explanation.
 
 
 ### 3. Properties of Interpretable Models
