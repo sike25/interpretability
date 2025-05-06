@@ -2,7 +2,7 @@
 
 **Zachary C. Lipton, 2017**
 
-This paper 
+This paper explores definitions of interpretability in supervised models.
 
 Paper: https://arxiv.org/pdf/1606.03490
 
@@ -35,22 +35,42 @@ We can also use models to provide human decision makers with information, as opp
 
 **2.5. Fair and Ethical Decision-Making**
 
-As models are deployed in critical social contexts like credit approval and recidivism prediction, interpretability is important in sniffing out bias and unfairness. The EU passed that any individual subject to algorithmic decisions has the right to explanation, and the right to contest based on the explanation.
+As models are deployed in critical social contexts like credit approval and crime recidivism prediction, interpretability is important in sniffing out bias and unfairness. The EU passed that any individual subject to algorithmic decisions has the right to explanation, and the right to contest based on the explanation.
 
 
 ### 3. Properties of Interpretable Models
 
+These properties can be broadly classified into: transparency (how does the model work) and post-hoc explanations (apart from the decision, what else can the model tell me?)
+
 **3.1. Transparency**
+
+Transparency can be considered in these three ways.
 
 3.1.1. SIMULATABILITY
 
+This is the ability to understand the model in its entirety— the ability of a person to take an input and in reasonable time, step through the model's workings and arrive at the same answer. 
+This is what inspires the idea that linear/lasso models are more interpretable than more complex ones. 
+But of course, this is really a factor of size. Even moderately large linear models or deep decision trees can not always be stepped through in reasonable, human time.
+Can't we then argue that some compact neural networks are more interpretable than some larger linear models.
+
 3.1.2. DECOMPOSABILITY
+
+This means intelligibility— the expectation that the weights and decisions of a model should have intuitive explanations. But this relies on both how interpretable the inputs are in the first place.
+But input features can be heavily engineered, anaonymized and scaled in all sorts of ways.
 
 3.1.3. ALGORITHMIC TRANSPARENCY
 
+With linear models, we understand how the training algorithm affects the error landscape and we can guarantee an optimal solution. Deep neural networks do not give this to us. Note that, neither does human reasoning.
+
+
 **3.2. Post-hoc Interpretability**
 
+Post-hoc interpretations include natural language explanations, visualizations of learned representations or models, and explanations by example (e.g. this tumor is classified as malignant because to the model it looks a lot like these other tumors).
+This is also the interpretability that humans generally have. 
+
 3.2.1. TEXT EXPLANATIONS
+
+
 
 3.2.2. VISUALIZATION
 
@@ -78,7 +98,7 @@ As models are deployed in critical social contexts like credit approval and reci
 
 **What are the strengths?** 
 
-1. 
+1. Reflective
 
 **What are the weaknesses?**      
 
